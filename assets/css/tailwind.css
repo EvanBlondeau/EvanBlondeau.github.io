@@ -1,0 +1,9 @@
+/* Placeholder Tailwind file
+   Actuellement, Tailwind est chargé via CDN (voir balise <script src="https://cdn.tailwindcss.com"></script>).
+   Si vous passez au build Tailwind (CLI/PostCSS), ce fichier pourra accueillir les directives:
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+*/
+
+

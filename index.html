@@ -8,15 +8,15 @@
   <title>Evan Blondeau - Portfolio</title>
   <meta content="enjoy" name="description">
   <meta content="" name="keywords">
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178910687-1"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-012VE9YMC3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
-    gtag('config', 'UA-178910687-1');
+    gtag('config', 'G-012VE9YMC3');
   </script>
 
   <!-- Favicons -->
@@ -24,14 +24,16 @@
   <link href="assets/img/profile-img.jpg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Vendor CSS Files (Bootstrap removed) -->
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
@@ -42,7 +44,7 @@
 <body>
 
   <!-- ======= Mobile nav toggle button ======= -->
-  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+  <button type="button" class="mobile-nav-toggle xl:hidden"><i data-feather="menu"></i></button>
 
   <!-- ======= Header ======= -->
   <header id="header">
@@ -50,43 +52,47 @@
 
       <div class="profile">
         <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="#hero">Evan Blondeau</a></h1>
+        <h1 class="text-white"><a href="#hero">Evan Blondeau</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="https://www.instagram.com/evan.blondeau/?hl=fr" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://github.com/EvanBlondeau" class="github"><i class="bx bxl-github"></i></a>
-          <a href="https://www.linkedin.com/in/evan-blondeau-7b249a12a/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.instagram.com/evan.blondeau/?hl=fr" class="instagram"><i
+              data-feather="instagram"></i></a>
+          <a href="https://github.com/EvanBlondeau" class="github"><i data-feather="github"></i></a>
+          <a href="https://www.linkedin.com/in/evan-blondeau-7b249a12a/" class="linkedin"><i
+              data-feather="linkedin"></i></a>
         </div>
       </div>
 
       <nav class="nav-menu">
         <ul>
-          <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Accueil</span></a></li>
-          <li><a href="#about"><i class="bx bx-user"></i> <span>A propos</span></a></li>
-          <li><a href="#skills"><i class="bx bx-server"></i> Compétences</a></li>
-          <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Experience professionnelle</span></a></li>
-          <li><a href="#portfolio"><i class="bx bx-book-content"></i> Portfolio</a></li>
-          <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
+          <li class="active"><a href="#hero"><i data-feather="home"></i> <span>Accueil</span></a></li>
+          <li><a href="#about"><i data-feather="user"></i> <span>A propos</span></a></li>
+          <li><a href="#skills"><i data-feather="server"></i> Compétences</a></li>
+          <li><a href="#resume"><i data-feather="file-text"></i> <span>Experience professionnelle</span></a></li>
+          <li><a href="#portfolio"><i data-feather="book-open"></i> Portfolio</a></li>
+          <li><a href="#contact"><i data-feather="mail"></i> Contact</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
-      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+      <button type="button" class="mobile-nav-toggle xl:hidden"><i class="icofont-navigation-menu"></i></button>
 
     </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+  <section id="hero" class="flex flex-col justify-center items-center">
     <div class="profile">
       <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
       <div class="social-links mt-3 text-center">
-        <a href="https://www.instagram.com/evan.blondeau/?hl=fr" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="https://github.com/EvanBlondeau" class="github"><i class="bx bxl-github"></i></a>
-        <a href="https://www.linkedin.com/in/evan-blondeau-7b249a12a/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.instagram.com/evan.blondeau/?hl=fr" class="instagram"><i data-feather="instagram"></i></a>
+        <a href="https://github.com/EvanBlondeau" class="github"><i data-feather="github"></i></a>
+        <a href="https://www.linkedin.com/in/evan-blondeau-7b249a12a/" class="linkedin"><i
+            data-feather="linkedin"></i></a>
       </div>
     </div>
     <div class="hero-container" data-aos="fade-in">
       <h1>Evan Blondeau</h1>
-      <p>Je suis <span class="typed" data-typed-items="Ingénieur FullStack, Ingénieur DevOps, Développeur, Electronicien, Photographe"></span></p>
+      <p>Je suis <span class="typed"
+          data-typed-items="Ingénieur FullStack, Ingénieur DevOps, Développeur, Electronicien, Photographe"></span></p>
       <p>mais pas que..</p>
     </div>
   </section><!-- End Hero -->
@@ -95,44 +101,52 @@
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div class="container">
+      <div class="container mx-auto px-4">
 
         <div class="section-title">
           <h2>A propos</h2>
-          <p class="text-justify ">Bienvenue sur mon site qui me sert de portfolio, vous pourrez retrouver ici une partie des projets que j'ai réalisés au niveau scolaire, professionnel ainsi que personel.
-            Et avoir un aperçu de mes compétences techniques sur divers sujets, un résumé de mon parcours scolaire et professionnel pour en apprendre un peu plus à propos de moi.   </p>
+          <p class="text-justify ">Bienvenue sur mon site qui me sert de portfolio, vous pourrez retrouver ici une
+            partie des projets que j'ai réalisés au niveau scolaire, professionnel ainsi que personel.
+            Et avoir un aperçu de mes compétences techniques sur divers sujets, un résumé de mon parcours scolaire et
+            professionnel pour en apprendre un peu plus à propos de moi. </p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div class="lg:col-span-4" data-aos="fade-right">
             <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
           </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <div class="lg:col-span-8 pt-4 lg:pt-0 content" data-aos="fade-left">
             <h3>Ingénieur DevOps &amp; Fullstack.</h3>
             <p class="font-italic">
               Une personne qui n’a jamais commis d’erreurs n’a jamais tenté d’innover - Albert Einstein
             </p>
-            <div class="row">
-              <div class="col-lg-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
                 <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>Nom:</strong> Blondeau</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Prénom:</strong> Evan</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Localisation:</strong> Rennes, France</li>
+                  <li><i data-feather="chevron-right"></i> <strong>Nom:</strong> Blondeau</li>
+                  <li><i data-feather="chevron-right"></i> <strong>Prénom:</strong> Evan</li>
+                  <li><i data-feather="chevron-right"></i> <strong>Localisation:</strong> Rennes, France</li>
                 </ul>
               </div>
-              <div class="col-lg-6">
+              <div>
                 <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> 23 ans</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Formation:</strong> Diplôme d'ingénieur de l'ESIR</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>E-mail:</strong> evanblondeau@gmail.com</li>
+                  <li><i data-feather="chevron-right"></i> <strong>Age:</strong> 23 ans</li>
+                  <li><i data-feather="chevron-right"></i> <strong>Formation:</strong> Diplôme d'ingénieur de l'ESIR
+                  </li>
+                  <li><i data-feather="chevron-right"></i> <strong>E-mail:</strong> evanblondeau@gmail.com</li>
                 </ul>
               </div>
             </div>
             <p class="p-presentation text-justify">
-              Je me présente, Evan Blondeau, je viens de finir ma 5 ème année d'école d'ingénieur à l'ESIR en technologie de l'information option IoT, sécurité et ville intelligente. 
-              Qui se centrait plus sur l'univers du Cloud computing et toutes les technologies autour de ça, du développement web, mobile en FullStack, de l'univers de l'Internet of Things et comment intéragir avec eux. 
-              J'ai effectué ma dernière année en alternance à Thales Services sur un projet interne de webcast sécurisé, plus sur la partie fullsatck mais avec des bonnes connaissances en multimédia tel que HLS.
-              Je suis actuellement à la recherche d'un emploi dans le bassin rennais dans le DevOps et/ou Fullsatck car les deux peuvent être entremélés selon moi. Donc n'hésitez pas à me <a href=#contact>contater</a>.
+              Je me présente, Evan Blondeau, je viens de finir ma 5 ème année d'école d'ingénieur à l'ESIR en
+              technologie de l'information option IoT, sécurité et ville intelligente.
+              Qui se centrait plus sur l'univers du Cloud computing et toutes les technologies autour de ça, du
+              développement web, mobile en FullStack, de l'univers de l'Internet of Things et comment intéragir avec
+              eux.
+              J'ai effectué ma dernière année en alternance à Thales Services sur un projet interne de webcast sécurisé,
+              plus sur la partie fullsatck mais avec des bonnes connaissances en multimédia tel que HLS.
+              Je suis actuellement à la recherche d'un emploi dans le bassin rennais dans le DevOps et/ou Fullsatck car
+              les deux peuvent être entremélés selon moi. Donc n'hésitez pas à me <a href=#contact>contater</a>.
             </p>
           </div>
         </div>
@@ -142,145 +156,160 @@
 
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills section-bg">
-      <div class="container">
+      <div class="container mx-auto px-4">
 
         <div class="section-title">
           <h2>Compétences</h2>
         </div>
 
-        <div class="row skills-content">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="icofont-computer"></i></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 skills-content">
+          <div class="icon-box" data-aos="fade-up">
+            <div class="icon"><i data-feather="monitor"></i></div>
             <h4 class="title"><a href="">Environements</a></h4>
-            
+
             <div class="description">
-              
+
               <div class="progress">
                 <span class="skill">Docker <i class="val">80%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
               <div class="progress">
                 <span class="skill">Linux<i class="val">90%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
               <div class="progress">
                 <span class="skill">Kubernetes <i class="val">50%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon"><i data-feather="bar-chart-2"></i></div>
             <h4 class="title"><a href="">Front End</a></h4>
             <div class="description">
-              
+
               <div class="progress">
                 <span class="skill">React<i class="val">75%%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
               <div class="progress">
                 <span class="skill">HTML/CSS<i class="val">85%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
               <div class="progress">
                 <span class="skill">Flutter <i class="val">60%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
               <div class="progress">
                 <span class="skill">Android JAVA <i class="val">50%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="icofont-earth"></i></div>
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon"><i data-feather="globe"></i></div>
             <h4 class="title"><a href="">Langages</a></h4>
             <div class="description">
-              
+
               <div class="progress">
                 <span class="skill">JavaScript, TypeScript<i class="val">80%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
               <div class="progress">
                 <span class="skill">C#, JAVA<i class="val">65%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
               <div class="progress">
                 <span class="skill">C, C++ <i class="val">55%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
               <div class="progress">
                 <span class="skill">Python <i class="val">60%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="icofont-image"></i></div>
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon"><i data-feather="image"></i></div>
             <h4 class="title"><a href="">Outils</a></h4>
             <div class="description">
-              
+
               <div class="progress">
                 <span class="skill">Jira, Confluence <i class="val">75%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
               <div class="progress">
                 <span class="skill">Git, Gitlab, Github <i class="val">85%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
               <div class="progress">
                 <span class="skill">Trello, Slack <i class="val">55%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
               <div class="progress">
                 <span class="skill">Pack office <i class="val">70%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
@@ -288,40 +317,37 @@
           </div>
 
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="icofont-settings"></i></div>
+            <div class="icon"><i data-feather="settings"></i></div>
             <h4 class="title"><a href="">Scripting</a></h4>
-             <div class="description">
-              
+            <div class="description">
+
               <div class="progress">
                 <span class="skill">Bash <i class="val">60%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
               <div class="progress">
                 <span class="skill">Ansible <i class="val">45%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                  </div>
                 </div>
               </div>
 
             </div>
           </div>
-
-          <div class="col-12" data-aos="fade-up" data-aos-delay="400">
-            <div class="row"> 
-                <div class="col-lg-6 col-md-6 col-12 dl-cv">
-                  <a class="btn btn-info myButton" role="button" href="docs/CVEvanBlondeauFullStack.pdf"  target="_blank"> Télécharger mon CV fullstack</a>
-              </div>
-
-              <div class="col-lg-6 col-md-6 col-12 dl-cv">
-                  <a class="btn btn-info myButton" role="button" href="docs/CVEvanBlondeauDevops.pdf"  target="_blank"> Télécharger mon CV DevOps</a>
-              </div>
-
-            </div>
-           
         </div>
+
+        <div class="col-12" data-aos="fade-up" data-aos-delay="400">
+          <div class="dl-cv">
+            <a class="myButton inline-block px-6 py-3" role="button" href="docs/CVEvanBlondeauDevops.pdf"
+              target="_blank"> Télécharger mon CV DevOps</a>
+          </div>
+        </div>
+
       </div>
 
       </div>
@@ -329,23 +355,25 @@
 
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
-      <div class="container">
+      <div class="container mx-auto px-4">
 
         <div class="section-title">
           <h2>Formations et Experiences professionnelles</h2>
-          <p class="text-justify "> Dans cette partie, vous trouverez les formations que j'ai réalisées ainsi que mes expériences professionnelles en relation avec mon domaine avec quelques explications des points abordés et réalisés.</p>
+          <p class="text-justify "> Dans cette partie, vous trouverez les formations que j'ai réalisées ainsi que mes
+            expériences professionnelles en relation avec mon domaine avec quelques explications des points abordés et
+            réalisés.</p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div class="lg:col-span-6" data-aos="fade-up">
             <h3 class="resume-title">Formation</h3>
             <div class="resume-item">
               <h4>Diplôme d'ingénieur de l'ESIR</h4>
               <div class="grp-img-txt">
-                <img src="assets/img/esir.png" class="img-exp" alt=""/>
+                <img src="assets/img/esir.png" class="img-exp" alt="" />
                 <div class="txt-resume">
                   <h5>2017 - 2020</h5>
-                    <p><em>École supérieur des ingénieurs de Rennes</em></p>
+                  <p><em>École supérieur des ingénieurs de Rennes</em></p>
                 </div>
               </div>
               <p>Spécialité technologie de l'information option IOT, sécurité et ville intelligente</p>
@@ -354,7 +382,7 @@
             <div class="resume-item">
               <h4>DUT Génie électrique et informatique industrielle</h4>
               <div class="grp-img-txt">
-                <img src="assets/img/iut.png" class="img-exp" alt=""/>
+                <img src="assets/img/iut.png" class="img-exp" alt="" />
                 <div class="txt-resume">
                   <h5>2015 - 2017</h5>
                   <p><em>IUT de Rennes</em></p>
@@ -363,24 +391,25 @@
               <div>Projets réalisés:</div>
               <ul>
                 <li>Élaboration d’un gant musical à l'aide d'une Raspberry Pi</li>
-                <li>Réalisation d’un cardiofréquencemètre complet. Création des cartes électroniques ainsi que la partie programmation en C.</li>
+                <li>Réalisation d’un cardiofréquencemètre complet. Création des cartes électroniques ainsi que la partie
+                  programmation en C.</li>
               </ul>
             </div>
             <div class="resume-item">
               <h4>BAC Scientifique</h4>
-                <div class="txt-resume">
-                  <h5>2015</h5>
-                  <p><em>Lycée saint magloire, Dol de Bretagne</em></p>
+              <div class="txt-resume">
+                <h5>2015</h5>
+                <p><em>Lycée saint magloire, Dol de Bretagne</em></p>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="lg:col-span-6" data-aos="fade-up" data-aos-delay="100">
             <h3 class="resume-title">Experiences professionnelles</h3>
             <div class="resume-item">
               <h4>Contrat de professionnalisation</h4>
               <div class="grp-img-txt">
-                <img src="assets/img/thales.jpeg" class="img-exp" alt=""/>
+                <img src="assets/img/thales.jpeg" class="img-exp" alt="" />
                 <div class="txt-resume">
                   <h5>septembre 2019 - septembre 2020</h5>
                   <p><em>Thales Services Rennes</em></p>
@@ -388,7 +417,8 @@
               </div>
               <div>Développement et conception de diverses fonctionnalités front-end et back-end :</div>
               <ul>
-                <li>Recensement des erreurs du lecteur vidéo avec récupération des informations utiles à l'aide de HLS.js avec React et Redux</li>
+                <li>Recensement des erreurs du lecteur vidéo avec récupération des informations utiles à l'aide de
+                  HLS.js avec React et Redux</li>
                 <li>Utilisation de la PunchPlateform pour analyser ces données avec Kibana</li>
                 <li>Téléverser une vidéo depuis le portail</li>
                 <li>Lire une vidéo sur la plateforme depuis une redirection avec un lien externe</li>
@@ -397,12 +427,12 @@
             <div class="resume-item">
               <h4>Stage de 4ème année</h4>
               <div class="grp-img-txt">
-                  <img src="assets/img/univ.png" class="img-exp"  alt=""/>
-                  <div class="txt-resume">
-                    <h5>juin 2019 - septembre 2019</h5>
-                    <p><em>Université de Rennes 1 - MoBbi</em></p>
-                  </div>
+                <img src="assets/img/univ.png" class="img-exp" alt="" />
+                <div class="txt-resume">
+                  <h5>juin 2019 - septembre 2019</h5>
+                  <p><em>Université de Rennes 1 - MoBbi</em></p>
                 </div>
+              </div>
               <div>Développement d’un démonstrateur OBDII vers différents supports :</div>
               <ul>
                 <li>Application Android réalisé en JAVA avec communication Bluetooth entre l'application et l'OBDII</li>
@@ -412,15 +442,16 @@
             <div class="resume-item">
               <h4>Stage de fin d'étude de DUT</h4>
               <div class="grp-img-txt">
-                  <img src="assets/img/meggit.png" class="img-exp" alt=""/>
-                  <div class="txt-resume">
-                    <h5>avril 2017 - juin 2017</h5>
-                    <p><em>MEGGIT Artus Vietnam, Biên Hôa - Vietnam</em></p>
-                  </div>
+                <img src="assets/img/meggit.png" class="img-exp" alt="" />
+                <div class="txt-resume">
+                  <h5>avril 2017 - juin 2017</h5>
+                  <p><em>MEGGIT Artus Vietnam, Biên Hôa - Vietnam</em></p>
+                </div>
               </div>
               <div>Création d’un banc de test d’une carte électronique pour des ventilateurs dans un A350.</div>
               <ul>
-                <li>Partie informatique faite en C# avec la mise en place d’une IHM avec gestion des fichiers Excel et des différents instruments de mesure.</li>
+                <li>Partie informatique faite en C# avec la mise en place d’une IHM avec gestion des fichiers Excel et
+                  des différents instruments de mesure.</li>
                 <li>Partie électronique réalisée à partir de relais, de cartes I/O.</li>
               </ul>
             </div>
@@ -432,17 +463,19 @@
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
+      <div class="container mx-auto px-4">
 
         <div class="section-title">
           <h2>Portfolio</h2>
-          <p class="text-justify">Cela répertorie une grande partie de mes projets scolaires, personels et parfois professionnels que j'ai pu réaliser.
-            N'hesitez surtout pas à en savoir plus sur chacun des projets, cliquez dessus et vous aurez une description de chacun d'eux et de ce qui a été réalisé.</p>
+          <p class="text-justify">Cela répertorie une grande partie de mes projets scolaires, personels et parfois
+            professionnels que j'ai pu réaliser.
+            N'hesitez surtout pas à en savoir plus sur chacun des projets, cliquez dessus et vous aurez une description
+            de chacun d'eux et de ce qui a été réalisé.</p>
         </div>
 
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
+        <div class="w-full" data-aos="fade-up">
+          <div class="w-full flex justify-center">
+            <ul id="portfolio-flters" class="inline-flex items-center space-x-2">
               <li data-filter="*" class="filter-active">All</li>
               <li data-filter=".filter-2020">2020</li>
               <li data-filter=".filter-2019">2019</li>
@@ -451,69 +484,8 @@
           </div>
         </div>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item filter-2020">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/tls.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                 <!-- <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a> -->
-                <a href="details-tls.html" title="En savoir plus"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item filter-2020">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Picture1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <!-- <a href="assets/img/portfolio/Picture1.png" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a> -->
-                <a href="details-veliot.html" title="En savoir plus"><i class="bx bx-info-circle"></i> </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item filter-2019">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/obdII.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                 <!-- <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a> -->
-                <a href="details-obdII.html" title="En savoir plus"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item filter-2019">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/konnex_IOT.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                 <!-- <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a> -->
-                <a href="details-knx.html" title="En savoir plus"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        
-          <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item filter-other">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Picture9.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                 <!-- <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a> -->
-                <a href="details-smartcamera.html" title="En savoir plus"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-sm-6  portfolio-item filter-other">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Picture5.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                 <!-- <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a> -->
-                <a href="details-hackaton.html" title="En savoir plus"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 portfolio-container"
+          data-aos="fade-up" data-aos-delay="100"></div>
 
       </div>
     </section>
@@ -521,31 +493,35 @@
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
-      <div class="container">
+      <div class="container mx-auto px-4">
 
         <div class="section-title">
           <h2>Contact</h2>
         </div>
 
-        <div class="row" data-aos="fade-in">
+        <div class="w-full" data-aos="fade-in">
 
-          <div class="col-lg-12 d-flex align-items-stretch">
-            <div class="row info">
-            <div class="col-12 col-md-6 info-text">
-              <div class="address">
-                <a href="https://www.google.com/maps?ll=48.103476,-1.67227&z=13&t=m&hl=fr&gl=FR&mapclient=embed&cid=3240552067866681292"><i class="icofont-google-map"></i></a>
-                <h4>Localisation:</h4>
-                <p>Rennes, France</p>
-              </div>
+          <div class="w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 info">
+              <div class="info-text">
+                <div class="address">
+                  <a
+                    href="https://www.google.com/maps?ll=48.103476,-1.67227&z=13&t=m&hl=fr&gl=FR&mapclient=embed&cid=3240552067866681292"><i
+                      data-feather="map-pin"></i></a>
+                  <h4>Localisation:</h4>
+                  <p>Rennes, France</p>
+                </div>
 
-              <div class="email">
-                <a href="mailto:evanblondeau@gmail.com" ><i class="icofont-envelope"></a></i>
-                <h4>E-mail:</h4>
-                <p>evanblondeau@gmail.com</p>
+                <div class="email">
+                  <a href="mailto:evanblondeau@gmail.com"><i data-feather="mail"></i></a>
+                  <h4>E-mail:</h4>
+                  <p>evanblondeau@gmail.com</p>
+                </div>
               </div>
-            </div>
-              <div class="col-12 col-md-6">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23922.769810050522!2d-1.6816581778517432!3d48.10839077785676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480edfb5c53cfb81%3A0x2cf8c0efc159dfcc!2sRennes!5e0!3m2!1sfr!2sfr!4v1600798830514!5m2!1sfr!2sfr"  frameborder="0" style="border:0; width: 100%; height: 20.15rem;" allowfullscreen></iframe>
+              <div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23922.769810050522!2d-1.6816581778517432!3d48.10839077785676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480edfb5c53cfb81%3A0x2cf8c0efc159dfcc!2sRennes!5e0!3m2!1sfr!2sfr!4v1600798830514!5m2!1sfr!2sfr"
+                  frameborder="0" style="border:0; width: 100%; height: 20.15rem;" allowfullscreen></iframe>
               </div>
             </div>
 
@@ -568,22 +544,11 @@
     </div>
   </footer><!-- End  Footer -->
 
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
+  <a href="#" class="back-to-top"><i data-feather="chevron-up"></i></a>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/portfolio.js"></script>
 
 </body>
 

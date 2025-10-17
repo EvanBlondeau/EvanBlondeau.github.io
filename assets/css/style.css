@@ -72,6 +72,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 120px;
   border: 8px solid #2c2f3f;
+  border-radius: 50%;
 }
 
 #header .profile h1 {
@@ -286,6 +287,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     width: 120px;
     border: 8px solid #2c2f3f;
+    border-radius: 50%;
   }
   
   #hero .profile h1 {
@@ -361,6 +363,10 @@ section {
   left: 0;
 }
 
+/* Reveal effect (replacement for AOS) */
+[data-aos] { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.is-visible { opacity: 1 !important; transform: none !important; }
+
 .section-title p {
   margin-bottom: 0;
 }
@@ -382,12 +388,16 @@ section {
 .about .content ul li {
   padding-bottom: 10px;
 }
+/* Align chevrons and text */
+.about .content ul li { display: flex; align-items: center; }
 
 .about .content ul i {
   font-size: 20px;
   padding-right: 2px;
   color: #149ddd;
 }
+/* Feather icons variant */
+.about .content ul svg { width: 20px; height: 20px; margin-right: 6px; vertical-align: middle; }
 
 .about .content p:last-child {
   margin-bottom: 0;
@@ -655,14 +665,21 @@ section {
   background: rgba(35, 153, 208, 0.898);
   transition: 0.3s;
   border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a svg {
+  width: 24px;
+  height: 24px;
 }
 
 .portfolio .portfolio-wrap img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 13rem;
-  width: 13rem;
+  width: 100%;
+  height: auto;
   border-radius: 1.5rem;
 }
 
@@ -740,6 +757,9 @@ section {
   line-height: 24px;
   font-size: 14px;
 }
+/* CV buttons centering */
+.skills .dl-cv { display: flex; justify-content: center; text-align: center; }
+.skills .dl-cv .myButton { display: inline-block; width: 100%; max-width: 20rem; }
 
 /*--------------------------------------------------------------
 # Contact
@@ -1172,4 +1192,97 @@ section {
   .myButton {
     font-size:1rem;
   }
+}
+
+/*--------------------------------------------------------------
+# Feather icons adjustments (spacing, alignment)
+--------------------------------------------------------------*/
+/* Nav items: space between icon and text */
+.nav-menu a svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  color: #6f7180;
+  flex-shrink: 0;
+}
+
+.nav-menu a:hover svg, .nav-menu .active > a svg, .nav-menu li:hover > a svg {
+  color: #149ddd;
+}
+
+/* Mobile toggle icon color */
+.mobile-nav-toggle svg {
+  color: #149ddd;
+}
+
+.mobile-nav-active .mobile-nav-toggle svg {
+  color: #fff;
+}
+
+/* Header social icons (left sidebar) */
+#header .profile .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header .profile .social-links a svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Hero social icons (mobile) */
+#hero .profile .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero .profile .social-links a svg { width: 18px; height: 18px; }
+
+/* About list icons */
+.about .content ul svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Skills round icon */
+.skills .icon svg {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
+
+.skills .icon-box:hover .icon svg { color: #149ddd; }
+
+/* Back-to-top arrow positioning */
+.back-to-top svg {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 7px;
+  left: 8px;
+}
+
+/* Contact icons: keep circular background and center SVG */
+.contact .info a {
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #dff3fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  color: #149ddd;
+}
+
+.contact .info a svg { width: 20px; height: 20px; }
+
+.contact .info .email:hover a, .contact .info .address:hover a, .contact .info .phone:hover a {
+  background: #149ddd;
+  color: #fff;
 }

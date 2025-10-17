@@ -1,0 +1,51 @@
+[
+  {
+    "slug": "tls",
+    "title": "Thales Live Streaming - Flutter",
+    "year": 2020,
+    "image": "assets/img/portfolio/tls.png",
+    "path": "projects/tls.html",
+    "tags": ["2020"]
+  },
+  {
+    "slug": "veliot",
+    "title": "VelIoT - Vélo Connecté",
+    "year": 2020,
+    "image": "assets/img/portfolio/Picture1.png",
+    "path": "projects/veliot.html",
+    "tags": ["2020"]
+  },
+  {
+    "slug": "obdii",
+    "title": "OBDII - Démonstrateur",
+    "year": 2019,
+    "image": "assets/img/portfolio/obdII.png",
+    "path": "projects/obdii.html",
+    "tags": ["2019"]
+  },
+  {
+    "slug": "knx",
+    "title": "KNX - IoT Building",
+    "year": 2019,
+    "image": "assets/img/portfolio/konnex_IOT.png",
+    "path": "projects/knx.html",
+    "tags": ["2019"]
+  },
+  {
+    "slug": "smartcamera",
+    "title": "Smart Camera",
+    "year": 2018,
+    "image": "assets/img/portfolio/Picture9.png",
+    "path": "projects/smartcamera.html",
+    "tags": ["2018 et -", "other"]
+  },
+  {
+    "slug": "hackaton",
+    "title": "Hackaton Insomnihack",
+    "year": 2018,
+    "image": "assets/img/portfolio/Picture5.png",
+    "path": "projects/hackaton.html",
+    "tags": ["2018 et -", "other"]
+  }
+]
+
