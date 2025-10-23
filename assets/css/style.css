@@ -1339,63 +1339,49 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Instagram Grid Mosaic Styles
+# LightWidget Instagram Feed Styles
 --------------------------------------------------------------*/
-.instagram-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin: 0 auto;
-  max-width: 100%;
-}
-
-.instagram-grid .instagram-media {
+.lightwidget-widget {
   width: 100% !important;
   max-width: 100% !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border-radius: 8px;
+  margin: 0 auto;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  background: #fff;
 }
 
-.instagram-grid .instagram-media:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+/* LightWidget responsive adjustments */
+.lightwidget-widget iframe {
+  width: 100% !important;
+  height: auto !important;
+  border: none !important;
+  border-radius: 12px;
 }
 
-/* Responsive Instagram Grid */
+/* Mobile optimizations */
 @media (max-width: 768px) {
-  .instagram-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
+  .lightwidget-widget {
+    margin: 0;
+    border-radius: 8px;
   }
   
-  .instagram-grid .instagram-media {
-    min-width: 120px !important;
+  .lightwidget-widget iframe {
+    border-radius: 8px;
   }
 }
 
+/* Tablet optimizations */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .instagram-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
-  
-  .instagram-grid .instagram-media {
-    min-width: 150px !important;
+  .lightwidget-widget {
+    border-radius: 10px;
   }
 }
 
+/* Desktop optimizations */
 @media (min-width: 1025px) {
-  .instagram-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-  
-  .instagram-grid .instagram-media {
-    min-width: 180px !important;
+  .lightwidget-widget {
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
   }
 }

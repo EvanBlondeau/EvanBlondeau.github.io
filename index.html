@@ -116,25 +116,22 @@
             <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
           </div>
           <div class="md:col-span-8 pt-4 md:pt-0 content">
-            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold">Ingénieur DevOps &amp; Fullstack.</h3>
-            <p class="font-italic text-sm sm:text-base md:text-lg">
-              Une personne qui n'a jamais commis d'erreurs n'a jamais tenté d'innover - Albert Einstein
-            </p>
+            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold">Ingénieur Cloud &amp; DevOps.</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <ul>
-                  <li><i data-feather="chevron-right"></i> <strong>Nom:</strong> Blondeau</li>
-                  <li><i data-feather="chevron-right"></i> <strong>Prénom:</strong> Evan</li>
-                  <li><i data-feather="chevron-right"></i> <strong>Localisation:</strong> Rennes, France</li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li><i data-feather="chevron-right"></i> <strong>Age:</strong> 23 ans</li>
-                  <li><i data-feather="chevron-right"></i> <strong>Formation:</strong> Diplôme d'ingénieur de l'ESIR
-                  </li>
-                  <li><i data-feather="chevron-right"></i> <strong>E-mail:</strong> evanblondeau@gmail.com</li>
-                </ul>
+                  <ul>
+                    <li><i data-feather="chevron-right"></i> <strong>Nom:</strong> Blondeau</li>
+                    <li><i data-feather="chevron-right"></i> <strong>Prénom:</strong> Evan</li>
+                    <li><i data-feather="chevron-right"></i> <strong>Localisation:</strong> Rennes, France</li>
+                  </ul>
+                </div>
+                <div>
+                  <ul>
+                    <li><i data-feather="chevron-right"></i> <strong>Age:</strong> 23 ans</li>
+                    <li><i data-feather="chevron-right"></i> <strong>Formation:</strong> Diplôme d'ingénieur de l'ESIR
+                    </li>
+                    <li><i data-feather="chevron-right"></i> <strong>E-mail:</strong> evanblondeau@gmail.com</li>
+                  </ul>
               </div>
             </div>
             <p class="p-presentation text-justify">
@@ -493,28 +490,73 @@
             photographie animalière et sous-marine.
             Cette passion me permet de capturer la beauté de la nature et de partager ces moments uniques.</p>
         </div>
-
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <!-- Photographie Animalière -->
-          <div
-            class="loisir-item bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300">
-            <div class="text-center">
-              <div class="loisir-icon mb-4">
-                <i data-feather="camera" class="w-12 h-12 text-blue-600 mx-auto"></i>
+          
+          <!-- Carte de photographie professionnelle -->
+          <div class="lg:col-span-1">
+            <div class="bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 rounded-xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 h-full border border-white/20">
+              <!-- Header avec icône et titre -->
+              <div class="text-center mb-8">
+                <div class="relative mb-6">
+                  <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-lg opacity-30"></div>
+                  <div class="relative bg-white p-4 rounded-full shadow-lg mx-auto w-20 h-20 flex items-center justify-center">
+                    <i data-feather="camera" class="w-10 h-10 text-blue-600"></i>
+                  </div>
+                </div>
+                <h4 class="font-bold text-2xl mb-2 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Photographie</h4>
+                <p class="text-gray-600 text-sm leading-relaxed">Passionné de photographie, je capture la beauté de la nature à travers deux univers complémentaires</p>
               </div>
-              <h4 class="font-bold text-xl mb-3 text-blue-800">Photographie Animalière</h4>
-              <p class="text-gray-700 text-sm mb-4">Capture de la faune sauvage dans son habitat naturel, avec un focus
-                sur les espèces endémiques de La Réunion.</p>
+              
+              <!-- Spécialités avec design professionnel -->
+              <div class="space-y-4 mb-8">
+                <!-- Photographie Animalière -->
+                <div class="group bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-md">
+                  <div class="flex items-center space-x-4">
+                    <div class="bg-gradient-to-br from-blue-100 to-blue-200 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                      <i data-feather="camera" class="w-6 h-6 text-blue-600"></i>
+                    </div>
+                    <div class="flex-1">
+                      <h5 class="font-bold text-blue-800 text-base mb-1">Photographie Animalière</h5>
+                      <p class="text-gray-600 text-sm">Faune sauvage de La Réunion</p>
+                      <div class="flex items-center mt-2">
+                        <div class="w-2 h-2 bg-blue-400 rounded-full mr-2"></div>
+                        <span class="text-xs text-blue-600 font-medium">Espèces endémiques</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Photographie Sous-marine -->
+                <div class="group bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-cyan-100 hover:border-cyan-200 transition-all duration-300 hover:shadow-md">
+                  <div class="flex items-center space-x-4">
+                    <div class="bg-gradient-to-br from-cyan-100 to-cyan-200 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                      <i data-feather="droplet" class="w-6 h-6 text-cyan-600"></i>
+                    </div>
+                    <div class="flex-1">
+                      <h5 class="font-bold text-cyan-800 text-base mb-1">Photographie Sous-marine</h5>
+                      <p class="text-gray-600 text-sm">Vie marine de l'océan Indien</p>
+                      <div class="flex items-center mt-2">
+                        <div class="w-2 h-2 bg-cyan-400 rounded-full mr-2"></div>
+                        <span class="text-xs text-cyan-600 font-medium">Récifs coralliens</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-              <a href="https://www.instagram.com/evanbld.photo/?hl=fr" target="_blank"
-                class="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium w-full justify-center">
-                <i data-feather="instagram" class="w-4 h-4 mr-2"></i>
-                Voir mes photos
-              </a>
+              <!-- Bouton d'action professionnel -->
+              <div class="text-center">
+                <a href="https://www.instagram.com/evanbld.photo/?hl=fr" target="_blank"
+                  class="group inline-flex items-center bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white px-8 py-4 rounded-xl hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full justify-center">
+                  <i data-feather="instagram" class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+                  <span>Découvrir mes photos</span>
+                  <i data-feather="arrow-right" class="w-4 h-4 ml-3 group-hover:translate-x-1 transition-transform duration-300"></i>
+                </a>
+              </div>
             </div>
           </div>
 
-          <!-- Mosaïque Instagram - 6 derniers posts -->
+          <!-- Mosaïque Instagram -->
           <div class="lg:col-span-2">
             <div class="bg-white rounded-lg shadow-lg p-6">
               <div class="text-center mb-6">
@@ -522,46 +564,14 @@
                 <p class="text-gray-600">Découvrez mes dernières captures animalières et sous-marines</p>
               </div>
 
-              <!-- Mosaïque Instagram -->
-              <div class="instagram-grid">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CZkHHrEK-Jp/"
-                  data-instgrm-version="14"></blockquote>
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CWtPUa2KzIj/"
-                  data-instgrm-version="14"></blockquote>
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CZuaX-eKGGf/"
-                  data-instgrm-version="14"></blockquote>
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CWTizTrKOno/"
-                  data-instgrm-version="14"></blockquote>
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CYHXJMXhl6b/"
-                  data-instgrm-version="14"></blockquote>
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CWdy3ETqpnd/"
-                  data-instgrm-version="14"></blockquote>
-              </div>
+               <!-- LightWidget Instagram Feed -->
+               <iframe src="//lightwidget.com/widgets/5bf9445a63545c5e9b60e5473526f995.html" 
+                       scrolling="no" 
+                       allowtransparency="true" 
+                       class="lightwidget-widget" 
+                       style="width:100%;border:0;overflow:hidden;">
+               </iframe>
             </div>
-          </div>
-
-          <!-- Cartes de photographie sur le côté -->
-          <div class="lg:col-span-1 space-y-6">
-
-            <!-- Photographie Sous-marine -->
-            <div
-              class="loisir-item bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300">
-              <div class="text-center">
-                <div class="loisir-icon mb-4">
-                  <i data-feather="droplet" class="w-12 h-12 text-cyan-600 mx-auto"></i>
-                </div>
-                <h4 class="font-bold text-xl mb-3 text-cyan-800">Photographie Sous-marine</h4>
-                <p class="text-gray-700 text-sm mb-4">Exploration des fonds marins de l'océan Indien, capture de la vie
-                  marine et des récifs coralliens.</p>
-
-                <a href="https://www.instagram.com/evanbld.photo/?hl=fr" target="_blank"
-                  class="inline-flex items-center bg-cyan-600 text-white px-4 py-2 rounded-lg hover:bg-cyan-700 transition-colors text-sm font-medium w-full justify-center">
-                  <i data-feather="instagram" class="w-4 h-4 mr-2"></i>
-                  Découvrir mes plongées
-                </a>
-              </div>
-            </div>
-
           </div>
 
         </div>
@@ -699,8 +709,8 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/portfolio.js"></script>
 
-  <!-- Instagram Embed Script -->
-  <script async src="//www.instagram.com/embed.js"></script>
+  <!-- LightWidget Script -->
+  <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
 
 </body>
 
