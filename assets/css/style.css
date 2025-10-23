@@ -65,10 +65,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 0.9375rem;
   background: #040b14;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  /* iOS Safari specific fixes */
-  height: 100vh;
-  height: -webkit-fill-available;
 }
 
 #header .profile img {
@@ -190,10 +186,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   cursor: pointer;
   text-align: right;
-  /* iOS Safari specific fixes */
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
 }
 
 .mobile-nav-toggle i {
@@ -1367,37 +1359,6 @@ section {
   border-radius: 12px;
 }
 
-/* iOS Safari specific fixes */
-@supports (-webkit-touch-callout: none) {
-  #header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
-    height: -webkit-fill-available;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  .mobile-nav-active #header {
-    left: 0;
-    transform: none;
-  }
-  
-  /* Fix for iOS Safari viewport issues */
-  body {
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  /* Ensure proper positioning on iOS */
-  #main {
-    position: relative;
-    z-index: 1;
-  }
-}
-
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .lightwidget-widget {
@@ -1407,25 +1368,6 @@ section {
   
   .lightwidget-widget iframe {
     border-radius: 8px;
-  }
-  
-  /* Additional iOS Safari fixes for mobile */
-  @supports (-webkit-touch-callout: none) {
-    #header {
-      height: 100vh;
-      height: calc(var(--vh, 1vh) * 100);
-      height: -webkit-fill-available;
-      max-height: 100vh;
-      max-height: calc(var(--vh, 1vh) * 100);
-      max-height: -webkit-fill-available;
-    }
-    
-    .mobile-nav-toggle {
-      position: fixed;
-      right: 15px;
-      top: 15px;
-      z-index: 9999;
-    }
   }
 }
 
