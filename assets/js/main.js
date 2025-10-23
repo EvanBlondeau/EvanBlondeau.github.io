@@ -1,4 +1,19 @@
 (() => {
+  // iOS Safari viewport fix
+  const setViewportHeight = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  };
+  
+  // Set initial viewport height
+  setViewportHeight();
+  
+  // Update viewport height on resize (important for iOS Safari)
+  window.addEventListener('resize', setViewportHeight);
+  window.addEventListener('orientationchange', () => {
+    setTimeout(setViewportHeight, 100);
+  });
+
   // Simple typed-like effect (no dependency)
   const typedEl = document.querySelector('.typed');
   if (typedEl) {
