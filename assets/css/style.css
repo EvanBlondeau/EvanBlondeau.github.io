@@ -1115,12 +1115,13 @@ section {
   padding: 15px;
   color: #f4f6fd;
   font-size: 0.875rem;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 18.75rem;
+  position: static;
+  left: auto;
+  bottom: auto;
+  width: 100%;
   z-index: 9999;
   background: #040b14;
+  margin-top: 40px;
 }
 
 #footer .copyright {
@@ -1134,14 +1135,7 @@ section {
   color: #eaebf0;
 }
 
-@media (max-width: 1199px) {
-  #footer {
-    position: static;
-    width: 100%;
-    bottom: 0;
-    padding-right: 20px 15px;
-  }
-}
+
 
 .text-justify {
   text-align: justify;
@@ -1298,4 +1292,110 @@ section {
 .contact .info .email:hover a, .contact .info .address:hover a, .contact .info .phone:hover a {
   background: #149ddd;
   color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Instagram Embed Responsive Styles
+--------------------------------------------------------------*/
+.instagram-media {
+  max-width: 100% !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+}
+
+/* Responsive Instagram embed for mobile devices */
+@media (max-width: 768px) {
+  .instagram-media {
+    min-width: 280px !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Responsive Instagram embed for tablet devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .instagram-media {
+    min-width: 400px !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Responsive Instagram embed for desktop devices */
+@media (min-width: 1025px) {
+  .instagram-media {
+    min-width: 500px !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Container for Instagram embed to ensure proper responsive behavior */
+.instagram-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*--------------------------------------------------------------
+# Instagram Grid Mosaic Styles
+--------------------------------------------------------------*/
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.instagram-grid .instagram-media {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagram-grid .instagram-media:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* Responsive Instagram Grid */
+@media (max-width: 768px) {
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+  
+  .instagram-grid .instagram-media {
+    min-width: 120px !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  .instagram-grid .instagram-media {
+    min-width: 150px !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  
+  .instagram-grid .instagram-media {
+    min-width: 180px !important;
+  }
 }
