@@ -17,7 +17,7 @@
   },
   {
     "slug": "obdii",
-    "title": "OBDII - Démonstrateur",
+    "title": "Démonstrateur OBDII",
     "year": 2019,
     "image": "assets/img/portfolio/obdII.png",
     "path": "projects/obdii.html",
@@ -33,7 +33,7 @@
   },
   {
     "slug": "smartcamera",
-    "title": "Smart Camera",
+    "title": "SmartCamera - caméra connecté",
     "year": 2018,
     "image": "assets/img/portfolio/Picture9.png",
     "path": "projects/smartcamera.html",
@@ -41,7 +41,7 @@
   },
   {
     "slug": "hackaton",
-    "title": "Hackaton Insomnihack",
+    "title": "Hackaton Insomnihack 2.0",
     "year": 2018,
     "image": "assets/img/portfolio/Picture5.png",
     "path": "projects/hackaton.html",

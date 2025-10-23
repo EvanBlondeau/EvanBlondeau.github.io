@@ -34,7 +34,6 @@
   <!-- Vendor CSS Files (Bootstrap removed) -->
   <!-- Feather Icons -->
   <script src="https://unpkg.com/feather-icons"></script>
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -69,6 +68,7 @@
           <li><a href="#skills"><i data-feather="server"></i> Compétences</a></li>
           <li><a href="#resume"><i data-feather="file-text"></i> <span>Experience professionnelle</span></a></li>
           <li><a href="#portfolio"><i data-feather="book-open"></i> Portfolio</a></li>
+          <li><a href="#loisirs"><i data-feather="camera"></i> Loisirs</a></li>
           <li><a href="#contact"><i data-feather="mail"></i> Contact</a></li>
 
         </ul>
@@ -89,11 +89,11 @@
             data-feather="linkedin"></i></a>
       </div>
     </div>
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Evan Blondeau</h1>
-      <p>Je suis <span class="typed"
+    <div class="hero-container">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">Evan Blondeau</h1>
+      <p class="text-sm sm:text-base md:text-lg lg:text-xl">Je suis <span class="typed"
           data-typed-items="Ingénieur FullStack, Ingénieur DevOps, Développeur, Electronicien, Photographe"></span></p>
-      <p>mais pas que..</p>
+      <p class="text-sm sm:text-base md:text-lg">mais pas que..</p>
     </div>
   </section><!-- End Hero -->
 
@@ -112,13 +112,13 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <div class="lg:col-span-4" data-aos="fade-right">
+          <div class="lg:col-span-4">
             <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
           </div>
-          <div class="lg:col-span-8 pt-4 lg:pt-0 content" data-aos="fade-left">
-            <h3>Ingénieur DevOps &amp; Fullstack.</h3>
-            <p class="font-italic">
-              Une personne qui n’a jamais commis d’erreurs n’a jamais tenté d’innover - Albert Einstein
+          <div class="lg:col-span-8 pt-4 lg:pt-0 content">
+            <h3 class="text-lg sm:text-xl md:text-2xl font-semibold">Ingénieur DevOps &amp; Fullstack.</h3>
+            <p class="font-italic text-sm sm:text-base md:text-lg">
+              Une personne qui n'a jamais commis d'erreurs n'a jamais tenté d'innover - Albert Einstein
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -163,7 +163,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 skills-content">
-          <div class="icon-box" data-aos="fade-up">
+          <div class="icon-box">
             <div class="icon"><i data-feather="monitor"></i></div>
             <h4 class="title"><a href="">Environements</a></h4>
 
@@ -196,7 +196,7 @@
             </div>
           </div>
 
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+          <div class="icon-box">
             <div class="icon"><i data-feather="bar-chart-2"></i></div>
             <h4 class="title"><a href="">Front End</a></h4>
             <div class="description">
@@ -236,7 +236,7 @@
             </div>
           </div>
 
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon-box">
             <div class="icon"><i data-feather="globe"></i></div>
             <h4 class="title"><a href="">Langages</a></h4>
             <div class="description">
@@ -276,7 +276,7 @@
             </div>
           </div>
 
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+          <div class="icon-box">
             <div class="icon"><i data-feather="image"></i></div>
             <h4 class="title"><a href="">Outils</a></h4>
             <div class="description">
@@ -316,7 +316,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-4 col-md-6 icon-box">
             <div class="icon"><i data-feather="settings"></i></div>
             <h4 class="title"><a href="">Scripting</a></h4>
             <div class="description">
@@ -341,10 +341,12 @@
           </div>
         </div>
 
-        <div class="col-12" data-aos="fade-up" data-aos-delay="400">
+        <div class="col-12">
           <div class="dl-cv">
-            <a class="myButton inline-block px-6 py-3" role="button" href="docs/CVEvanBlondeauDevops.pdf"
-              target="_blank"> Télécharger mon CV DevOps</a>
+            <a class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300" role="button" href="docs/CVEvanBlondeauDevops.pdf" target="_blank">
+              <i data-feather="download" class="w-5 h-5 mr-2"></i>
+              Télécharger mon CV DevOps
+            </a>
           </div>
         </div>
 
@@ -365,7 +367,7 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <div class="lg:col-span-6" data-aos="fade-up">
+          <div class="lg:col-span-6">
             <h3 class="resume-title">Formation</h3>
             <div class="resume-item">
               <h4>Diplôme d'ingénieur de l'ESIR</h4>
@@ -404,7 +406,7 @@
             </div>
           </div>
 
-          <div class="lg:col-span-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="lg:col-span-6">
             <h3 class="resume-title">Experiences professionnelles</h3>
             <div class="resume-item">
               <h4>Contrat de professionnalisation</h4>
@@ -473,23 +475,73 @@
             de chacun d'eux et de ce qui a été réalisé.</p>
         </div>
 
-        <div class="w-full" data-aos="fade-up">
-          <div class="w-full flex justify-center">
-            <ul id="portfolio-flters" class="inline-flex items-center space-x-2">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-2020">2020</li>
-              <li data-filter=".filter-2019">2019</li>
-              <li data-filter=".filter-other">2018 et -</li>
-            </ul>
-          </div>
-        </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 portfolio-container"
-          data-aos="fade-up" data-aos-delay="100"></div>
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6 portfolio-container"
+></div>
 
       </div>
     </section>
     <!-- End Portfolio Section -->
+
+    <!-- ======= Loisirs Section ======= -->
+    <section id="loisirs" class="loisirs section-bg">
+      <div class="container mx-auto px-4">
+
+        <div class="section-title">
+          <h2>Loisirs & Passions</h2>
+          <p class="text-justify">En dehors de mon travail, je me passionne pour la photographie, particulièrement la photographie animalière et sous-marine. 
+            Cette passion me permet de capturer la beauté de la nature et de partager ces moments uniques.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="loisir-item bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300">
+            <div class="text-center">
+              <div class="loisir-icon mb-3 sm:mb-4">
+                <i data-feather="camera" class="w-8 h-8 sm:w-12 sm:h-12 text-blue-600 mx-auto"></i>
+              </div>
+              <h4 class="font-semibold text-sm sm:text-lg mb-2">Photographie Animalière</h4>
+              <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">Capture de la faune sauvage dans son habitat naturel, avec un focus sur les espèces endémiques de La Réunion.</p>
+              <a href="https://www.instagram.com/evan.blondeau/?hl=fr" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors text-xs sm:text-sm">
+                <i data-feather="instagram" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2"></i>
+                Voir mes photos
+              </a>
+            </div>
+          </div>
+
+          <div class="loisir-item bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300">
+            <div class="text-center">
+              <div class="loisir-icon mb-3 sm:mb-4">
+                <i data-feather="droplet" class="w-8 h-8 sm:w-12 sm:h-12 text-cyan-600 mx-auto"></i>
+              </div>
+              <h4 class="font-semibold text-sm sm:text-lg mb-2">Photographie Sous-marine</h4>
+              <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">Exploration des fonds marins de l'océan Indien, capture de la vie marine et des récifs coralliens.</p>
+              <a href="https://www.instagram.com/evan.blondeau/?hl=fr" target="_blank" class="inline-flex items-center text-cyan-600 hover:text-cyan-800 transition-colors text-xs sm:text-sm">
+                <i data-feather="instagram" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2"></i>
+                Découvrir mes plongées
+              </a>
+            </div>
+          </div>
+
+          <div class="loisir-item bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300">
+            <div class="text-center">
+              <div class="loisir-icon mb-3 sm:mb-4">
+                <i data-feather="mountain" class="w-8 h-8 sm:w-12 sm:h-12 text-green-600 mx-auto"></i>
+              </div>
+              <h4 class="font-semibold text-sm sm:text-lg mb-2">Randonnées & Nature</h4>
+              <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4">Exploration des sentiers de La Réunion, découverte des paysages volcaniques et de la biodiversité unique de l'île.</p>
+              <a href="https://www.instagram.com/evan.blondeau/?hl=fr" target="_blank" class="inline-flex items-center text-green-600 hover:text-green-800 transition-colors text-xs sm:text-sm">
+                <i data-feather="instagram" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2"></i>
+                Mes aventures
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Loisirs Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -497,33 +549,104 @@
 
         <div class="section-title">
           <h2>Contact</h2>
+          <p class="text-justify">Basé à La Réunion, je suis disponible pour des projets en télétravail ou sur site. 
+            N'hésitez pas à me contacter pour discuter de vos besoins en DevOps, développement ou photographie !</p>
         </div>
 
-        <div class="w-full" data-aos="fade-in">
-
-          <div class="w-full">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 info">
-              <div class="info-text">
-                <div class="address">
-                  <a
-                    href="https://www.google.com/maps?ll=48.103476,-1.67227&z=13&t=m&hl=fr&gl=FR&mapclient=embed&cid=3240552067866681292"><i
-                      data-feather="map-pin"></i></a>
-                  <h4>Localisation:</h4>
-                  <p>Rennes, France</p>
+        <div class="w-full">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Informations de contact -->
+            <div class="lg:col-span-1">
+              <div class="space-y-6">
+                <div class="contact-item bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow">
+                  <div class="flex items-center mb-3">
+                    <div class="bg-blue-100 p-2 sm:p-3 rounded-full mr-3 sm:mr-4">
+                      <i data-feather="map-pin" class="w-4 h-4 sm:w-6 sm:h-6 text-blue-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-sm sm:text-lg">Localisation</h4>
+                      <p class="text-gray-600 text-xs sm:text-sm">Saint-Pierre, La Réunion</p>
+                      <p class="text-xs text-gray-500">Océan Indien</p>
+                    </div>
+                  </div>
+                  <a href="https://www.google.com/maps/place/La+Réunion" target="_blank" 
+                     class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+                    <i data-feather="external-link" class="w-4 h-4 mr-2"></i>
+                    Voir sur la carte
+                  </a>
                 </div>
 
-                <div class="email">
-                  <a href="mailto:evanblondeau@gmail.com"><i data-feather="mail"></i></a>
-                  <h4>E-mail:</h4>
-                  <p>evanblondeau@gmail.com</p>
+                <div class="contact-item bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow">
+                  <div class="flex items-center mb-3">
+                    <div class="bg-green-100 p-2 sm:p-3 rounded-full mr-3 sm:mr-4">
+                      <i data-feather="mail" class="w-4 h-4 sm:w-6 sm:h-6 text-green-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-sm sm:text-lg">Email</h4>
+                      <p class="text-gray-600 text-xs sm:text-sm">evanblondeau@gmail.com</p>
+                    </div>
+                  </div>
+                  <a href="mailto:evanblondeau@gmail.com" 
+                     class="inline-flex items-center text-green-600 hover:text-green-800 transition-colors">
+                    <i data-feather="send" class="w-4 h-4 mr-2"></i>
+                    Envoyer un email
+                  </a>
                 </div>
-              </div>
-              <div>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23922.769810050522!2d-1.6816581778517432!3d48.10839077785676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480edfb5c53cfb81%3A0x2cf8c0efc159dfcc!2sRennes!5e0!3m2!1sfr!2sfr!4v1600798830514!5m2!1sfr!2sfr"
-                  frameborder="0" style="border:0; width: 100%; height: 20.15rem;" allowfullscreen></iframe>
+
+                <div class="contact-item bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                  <div class="flex items-center mb-3">
+                    <div class="bg-purple-100 p-3 rounded-full mr-4">
+                      <i data-feather="clock" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-lg">Fuseau horaire</h4>
+                      <p class="text-gray-600">UTC+4 (GMT+4)</p>
+                      <p class="text-sm text-gray-500">+3h par rapport à Paris</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="contact-item bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                  <div class="flex items-center mb-3">
+                    <div class="bg-pink-100 p-3 rounded-full mr-4">
+                      <i data-feather="instagram" class="w-6 h-6 text-pink-600"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-lg">Photographie</h4>
+                      <p class="text-gray-600">@evan.blondeau</p>
+                      <p class="text-sm text-gray-500">Photos nature & sous-marine</p>
+                    </div>
+                  </div>
+                  <a href="https://www.instagram.com/evan.blondeau/?hl=fr" target="_blank" 
+                     class="inline-flex items-center text-pink-600 hover:text-pink-800 transition-colors">
+                    <i data-feather="external-link" class="w-4 h-4 mr-2"></i>
+                    Voir mes photos
+                  </a>
+                </div>
               </div>
             </div>
+
+            <!-- Carte et informations supplémentaires -->
+            <div class="lg:col-span-2">
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d475000!2d55.5!3d-21.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2178778110b8e43b%3A0x4f7b8a8b8b8b8b8b!2sLa%20R%C3%A9union!5e0!3m2!1sfr!2sfr!4v1600798830514!5m2!1sfr!2sfr"
+                  frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen></iframe>
+              </div>
+              
+              <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-4">
+                  <h5 class="font-semibold text-blue-800 mb-2">Disponibilité</h5>
+                  <p class="text-blue-700 text-sm">Projets en télétravail ou sur site à La Réunion</p>
+                </div>
+                <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-4">
+                  <h5 class="font-semibold text-green-800 mb-2">Spécialités</h5>
+                  <p class="text-green-700 text-sm">DevOps, Cloud, Photographie</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           </div>
         </div>
