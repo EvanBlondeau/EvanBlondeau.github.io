@@ -60,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   width: 18.75rem;
   transition: all ease-in-out 0.5s;
-  z-index: 9997;
+  z-index: 10500;
   transition: all 0.5s;
   padding: 0 0.9375rem;
   background: #040b14;
@@ -1357,6 +1357,20 @@ section {
   height: auto !important;
   border: none !important;
   border-radius: 12px;
+}
+
+/*--------------------------------------------------------------
+# Instagram widget stacking context fix
+--------------------------------------------------------------*/
+.loisirs [class^="elfsight-app-"],
+.loisirs [class*=" elfsight-app-"] {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+body.mobile-nav-active .loisirs [class^="elfsight-app-"],
+body.mobile-nav-active .loisirs [class*=" elfsight-app-"] {
+  z-index: 0 !important;
 }
 
 /* Mobile optimizations */
