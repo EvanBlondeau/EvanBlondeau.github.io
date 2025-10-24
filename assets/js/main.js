@@ -72,28 +72,37 @@
   });
 
   // Mobile nav toggle
-  const toggleBtn = document.querySelector('.mobile-nav-toggle');
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('mobile-nav-active');
-      const icon = toggleBtn.querySelector('i');
-      if (icon) {
-        icon.classList.toggle('icofont-navigation-menu');
-        icon.classList.toggle('icofont-close');
+  const toggleBtns = Array.from(document.querySelectorAll('.mobile-nav-toggle'));
+  if (toggleBtns.length) {
+    const updateToggleIcons = (isActive) => {
+      toggleBtns.forEach(btn => {
+        const icon = btn.querySelector('i, svg');
+        if (!icon) return;
+        if (icon.tagName.toLowerCase() === 'i') {
+          icon.classList.toggle('icofont-navigation-menu', !isActive);
+          icon.classList.toggle('icofont-close', isActive);
+        } else if (icon.dataset && icon.dataset.feather) {
+          icon.dataset.feather = isActive ? 'x' : 'menu';
+        }
+      });
+      if (window.feather && typeof window.feather.replace === 'function') {
+        window.feather.replace();
       }
-    });
+    };
+
+    const handleToggle = (e) => {
+      e.preventDefault();
+      const isActive = document.body.classList.toggle('mobile-nav-active');
+      updateToggleIcons(isActive);
+    };
+
+    toggleBtns.forEach(btn => btn.addEventListener('click', handleToggle));
 
     document.addEventListener('click', (e) => {
-      if (!toggleBtn.contains(e.target)) {
-        if (document.body.classList.contains('mobile-nav-active')) {
-          document.body.classList.remove('mobile-nav-active');
-          const icon = toggleBtn.querySelector('i');
-          if (icon) {
-            icon.classList.add('icofont-navigation-menu');
-            icon.classList.remove('icofont-close');
-          }
-        }
-      }
+      if (toggleBtns.some(btn => btn.contains(e.target))) return;
+      if (!document.body.classList.contains('mobile-nav-active')) return;
+      document.body.classList.remove('mobile-nav-active');
+      updateToggleIcons(false);
     });
   }
 

@@ -46,6 +46,14 @@
     "image": "assets/img/portfolio/Picture5.png",
     "path": "projects/hackaton.html",
     "tags": ["2018 et -", "other"]
+  },
+  {
+    "slug": "crowdchoice",
+    "title": "Crowd Choice - Plateforme participative",
+    "year": 2019,
+    "image": "assets/img/portfolio/crowdchoice/ico2.JPG",
+    "path": "projects/crowdchoice.html",
+    "tags": ["2019", "other"]
   }
 ]
 
