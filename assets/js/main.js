@@ -213,40 +213,146 @@
   const initSimpleCarousel = () => {
     const carousels = document.querySelectorAll('.portfolio-details-carousel');
     carousels.forEach(carousel => {
-      const slides = Array.from(carousel.querySelectorAll('img'));
-      if (slides.length <= 1) return;
+      if (carousel.dataset.carouselInit === 'true') return;
+
+      let track = carousel.querySelector('.carousel-track');
+      let slides = track ? Array.from(track.querySelectorAll('img')) : Array.from(carousel.querySelectorAll('img'));
+
+      if (!track) {
+        track = document.createElement('div');
+        track.className = 'carousel-track';
+        slides.forEach(img => track.appendChild(img));
+        carousel.insertBefore(track, carousel.firstChild);
+      }
+
+      slides = Array.from(track.querySelectorAll('img'));
+
+      if (slides.length <= 1) {
+        slides.forEach(img => { img.style.display = 'block'; });
+        return;
+      }
+
+      carousel.dataset.carouselInit = 'true';
+
       let index = 0;
+      let autoPlayId = null;
+      let dots;
+
       const show = (i) => {
         slides.forEach((s, idx) => {
           s.style.display = idx === i ? 'block' : 'none';
         });
       };
-      show(index);
-      // Dots
-      const dots = document.createElement('div');
-      dots.style.textAlign = 'left';
-      slides.forEach((_, i) => {
-        const dot = document.createElement('span');
-        dot.style.display = 'inline-block';
-        dot.style.margin = '0 10px 0 0';
-        dot.style.width = '12px';
-        dot.style.height = '12px';
-        dot.style.borderRadius = '50%';
-        dot.style.backgroundColor = i === 0 ? '#149ddd' : '#ddd';
-        dot.addEventListener('click', () => {
-          index = i;
-          show(index);
-          Array.from(dots.children).forEach((d, di) => d.style.backgroundColor = di === index ? '#149ddd' : '#ddd');
+
+      const updateDots = () => {
+        if (!dots) return;
+        Array.from(dots.children).forEach((dot, di) => {
+          dot.classList.toggle('active', di === index);
         });
-        dots.appendChild(dot);
-      });
-      carousel.appendChild(dots);
-      // Auto-play
-      setInterval(() => {
-        index = (index + 1) % slides.length;
+      };
+
+      const goTo = (i) => {
+        index = (i + slides.length) % slides.length;
         show(index);
-        Array.from(dots.children).forEach((d, di) => d.style.backgroundColor = di === index ? '#149ddd' : '#ddd');
-      }, 4000);
+        updateDots();
+      };
+
+      const stopAutoPlay = () => {
+        if (autoPlayId !== null) {
+          clearInterval(autoPlayId);
+          autoPlayId = null;
+        }
+      };
+
+      const startAutoPlay = () => {
+        stopAutoPlay();
+        autoPlayId = window.setInterval(() => {
+          goTo(index + 1);
+        }, 7000);
+      };
+
+      const restartAutoPlay = () => {
+        stopAutoPlay();
+        startAutoPlay();
+      };
+
+      show(index);
+
+      dots = carousel.querySelector('.carousel-dots');
+      if (!dots) {
+        dots = document.createElement('div');
+        dots.className = 'carousel-dots';
+        carousel.appendChild(dots);
+      }
+
+      Array.from(dots.children).forEach((dot, i) => {
+        dot.classList.toggle('active', i === 0);
+        dot.addEventListener('click', () => {
+          goTo(i);
+          restartAutoPlay();
+        });
+      });
+
+      if (!dots.children.length) {
+        slides.forEach((_, i) => {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot';
+          if (i === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => {
+            goTo(i);
+            restartAutoPlay();
+          });
+          dots.appendChild(dot);
+        });
+      }
+
+      const createNavButton = (direction) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = `carousel-nav carousel-${direction}`;
+        const icon = direction === 'next' ? 'chevron-right' : 'chevron-left';
+        btn.innerHTML = `<i data-feather="${icon}"></i>`;
+        btn.addEventListener('click', () => {
+          goTo(index + (direction === 'next' ? 1 : -1));
+          restartAutoPlay();
+        });
+        return btn;
+      };
+
+      const attachNavHandler = (btn, direction) => {
+        if (!btn) return;
+        btn.addEventListener('click', () => {
+          goTo(index + (direction === 'next' ? 1 : -1));
+          restartAutoPlay();
+        });
+      };
+
+      let prevBtn = carousel.querySelector('.carousel-nav.carousel-prev');
+      let nextBtn = carousel.querySelector('.carousel-nav.carousel-next');
+      if (!prevBtn) {
+        prevBtn = createNavButton('prev');
+        carousel.insertBefore(prevBtn, track);
+      }
+      if (!nextBtn) {
+        nextBtn = createNavButton('next');
+        carousel.appendChild(nextBtn);
+      }
+
+      attachNavHandler(prevBtn, 'prev');
+      attachNavHandler(nextBtn, 'next');
+
+      const syncIcons = () => {
+        if (window.feather && typeof window.feather.replace === 'function') {
+          window.feather.replace();
+        }
+      };
+
+      syncIcons();
+      startAutoPlay();
+
+      carousel.addEventListener('mouseenter', stopAutoPlay);
+      carousel.addEventListener('mouseleave', startAutoPlay);
     });
   };
   window.addEventListener('load', initSimpleCarousel);
