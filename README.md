@@ -5,6 +5,7 @@ Site portfolio
 copyright@EvanBlondeau
 
 a ajouter:
-KNATIVE
+Knative
 mise en place de nouveau systeme de worker (dd to kubernetes)
 migration gitea ci to gitlab 
+Akamai CDN Chine

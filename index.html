@@ -160,104 +160,132 @@
       <div class="container mx-auto px-4">
 
         <div class="section-title">
-          <h2>Formations et Experiences professionnelles</h2>
-          <p class="text-justify "> Dans cette partie, vous trouverez les formations que j'ai réalisées ainsi que mes
-            expériences professionnelles en relation avec mon domaine avec quelques explications des points abordés et
-            réalisés.</p>
+          <h2>Formations et Expériences professionnelles</h2>
+          <p class="text-justify">Dans cette partie, vous découvrirez un aperçu chronologique de mon parcours académique et professionnel. Cliquez sur un jalon pour afficher les détails correspondants.</p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <div class="lg:col-span-6">
-            <h3 class="resume-title">Formation</h3>
-            <div class="resume-item">
-              <h4>Diplôme d'ingénieur de l'ESIR</h4>
-              <div class="grp-img-txt">
-                <img src="assets/img/esir.png" class="img-exp" alt="" />
-                <div class="txt-resume">
-                  <h5>2017 - 2020</h5>
-                  <p><em>École supérieur des ingénieurs de Rennes</em></p>
+        <div class="timeline" data-timeline>
+          <div class="timeline-track" role="tablist" aria-orientation="horizontal">
+            <button class="timeline-item is-top" type="button" role="tab" aria-selected="false" aria-controls="panel-bac" id="tab-bac" data-timeline-item="bac" aria-label="Baccalauréat Scientifique · 2015">
+              <span class="timeline-content">
+                <span class="timeline-icon">
+                  <span class="timeline-initial">B</span>
+                </span>
+                <span class="timeline-label">Bac S</span>
+              </span>
+            </button>
+            <button class="timeline-item is-bottom" type="button" role="tab" aria-selected="false" aria-controls="panel-dut" id="tab-dut" data-timeline-item="dut" aria-label="DUT GEii · 2015 - 2017">
+              <span class="timeline-content">
+                <span class="timeline-icon">
+                  <img src="assets/img/iut.png" alt="IUT Rennes" />
+                </span>
+                <span class="timeline-label">DUT GEii</span>
+              </span>
+            </button>
+            <button class="timeline-item is-top" type="button" role="tab" aria-selected="false" aria-controls="panel-meggit" id="tab-meggit" data-timeline-item="meggit" aria-label="Meggitt · 2017">
+              <span class="timeline-content">
+                <span class="timeline-icon">
+                  <img src="assets/img/meggit.png" alt="Meggitt" />
+                </span>
+                <span class="timeline-label">Meggitt</span>
+              </span>
+            </button>
+            <button class="timeline-item is-bottom is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-esir" id="tab-esir" data-timeline-item="esir" aria-label="ESIR · 2017 - 2020">
+              <span class="timeline-content">
+                <span class="timeline-icon">
+                  <img src="assets/img/esir.png" alt="ESIR" />
+                </span>
+                <span class="timeline-label">ESIR</span>
+              </span>
+            </button>
+            <button class="timeline-item is-top" type="button" role="tab" aria-selected="false" aria-controls="panel-mobbi" id="tab-mobbi" data-timeline-item="mobbi" aria-label="MoBbi · 2019">
+              <span class="timeline-content">
+                <span class="timeline-icon">
+                  <img src="assets/img/univ.png" alt="Université Rennes 1" />
+                </span>
+                <span class="timeline-label">MoBbi</span>
+              </span>
+            </button>
+            <button class="timeline-item is-bottom" type="button" role="tab" aria-selected="false" aria-controls="panel-thales" id="tab-thales" data-timeline-item="thales" aria-label="Thales · 2019 - 2020">
+              <span class="timeline-content">
+                <span class="timeline-icon">
+                  <img src="assets/img/thales.jpeg" alt="Thales" />
+                </span>
+                <span class="timeline-label">Thales</span>
+              </span>
+            </button>
                 </div>
               </div>
-              <p>Spécialité technologie de l'information option IOT, sécurité et ville intelligente</p>
-              <p>Responsable des sports et du basket au sein du BDE de l'école</p>
-            </div>
-            <div class="resume-item">
-              <h4>DUT Génie électrique et informatique industrielle</h4>
-              <div class="grp-img-txt">
-                <img src="assets/img/iut.png" class="img-exp" alt="" />
-                <div class="txt-resume">
-                  <h5>2015 - 2017</h5>
-                  <p><em>IUT de Rennes</em></p>
-                </div>
-              </div>
-              <div>Projets réalisés:</div>
-              <ul>
-                <li>Élaboration d’un gant musical à l'aide d'une Raspberry Pi</li>
-                <li>Réalisation d’un cardiofréquencemètre complet. Création des cartes électroniques ainsi que la partie
-                  programmation en C.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>BAC Scientifique</h4>
-              <div class="txt-resume">
-                <h5>2015</h5>
-                <p><em>Lycée saint magloire, Dol de Bretagne</em></p>
-              </div>
-            </div>
-          </div>
 
-          <div class="lg:col-span-6">
-            <h3 class="resume-title">Experiences professionnelles</h3>
-            <div class="resume-item">
-              <h4>Contrat de professionnalisation</h4>
-              <div class="grp-img-txt">
-                <img src="assets/img/thales.jpeg" class="img-exp" alt="" />
-                <div class="txt-resume">
-                  <h5>septembre 2019 - septembre 2020</h5>
-                  <p><em>Thales Services Rennes</em></p>
-                </div>
-              </div>
-              <div>Développement et conception de diverses fonctionnalités front-end et back-end :</div>
-              <ul>
-                <li>Recensement des erreurs du lecteur vidéo avec récupération des informations utiles à l'aide de
-                  HLS.js avec React et Redux</li>
-                <li>Utilisation de la PunchPlateform pour analyser ces données avec Kibana</li>
-                <li>Téléverser une vidéo depuis le portail</li>
-                <li>Lire une vidéo sur la plateforme depuis une redirection avec un lien externe</li>
+        <div class="timeline-details" data-timeline-details aria-live="polite">
+          <article class="timeline-panel is-active" id="panel-esir" role="tabpanel" aria-labelledby="tab-esir" aria-hidden="false" data-timeline-panel="esir">
+            <header>
+              <h3>Diplôme d'ingénieur de l'ESIR</h3>
+              <p class="timeline-period">2017 - 2020 · École Supérieure d'Ingénieurs de Rennes</p>
+            </header>
+            <p>Spécialité technologie de l'information, option IoT, sécurité et ville intelligente.</p>
+            <ul>
+              <li>Responsable des sports et du basket au sein du BDE.</li>
+              <li>Projets autour de la cybersécurité et de l'IoT.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-panel" id="panel-thales" role="tabpanel" aria-labelledby="tab-thales" aria-hidden="true" data-timeline-panel="thales">
+            <header>
+              <h3>Contrat de professionnalisation · Thales Services Rennes</h3>
+              <p class="timeline-period">Septembre 2019 - Septembre 2020</p>
+            </header>
+            <p>Développement et conception de fonctionnalités front-end et back-end pour la plateforme vidéo interne.</p>
+            <ul>
+              <li>Recensement et analyse des erreurs de lecture vidéo via HLS.js, React et Redux.</li>
+              <li>Exploitation des données dans Kibana sur la PunchPlatform.</li>
+              <li>Implémentation du téléversement et de la lecture vidéo sécurisée.</li>
               </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Stage de 4ème année</h4>
-              <div class="grp-img-txt">
-                <img src="assets/img/univ.png" class="img-exp" alt="" />
-                <div class="txt-resume">
-                  <h5>juin 2019 - septembre 2019</h5>
-                  <p><em>Université de Rennes 1 - MoBbi</em></p>
-                </div>
-              </div>
-              <div>Développement d’un démonstrateur OBDII vers différents supports :</div>
-              <ul>
-                <li>Application Android réalisé en JAVA avec communication Bluetooth entre l'application et l'OBDII</li>
-                <li>Casque Microsoft Hololens, application en C# avec Unity et communication en WebSocket.</li>
+          </article>
+
+          <article class="timeline-panel" id="panel-mobbi" role="tabpanel" aria-labelledby="tab-mobbi" aria-hidden="true" data-timeline-panel="mobbi">
+            <header>
+              <h3>Stage de 4ᵉ année · Université de Rennes 1 - MoBbi</h3>
+              <p class="timeline-period">Juin 2019 - Septembre 2019</p>
+            </header>
+            <p>Développement d'un démonstrateur OBDII vers différents supports.</p>
+            <ul>
+              <li>Application Android en Java avec communication Bluetooth.</li>
+              <li>Application Hololens en C# / Unity avec communication WebSocket.</li>
               </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Stage de fin d'étude de DUT</h4>
-              <div class="grp-img-txt">
-                <img src="assets/img/meggit.png" class="img-exp" alt="" />
-                <div class="txt-resume">
-                  <h5>avril 2017 - juin 2017</h5>
-                  <p><em>MEGGIT Artus Vietnam, Biên Hôa - Vietnam</em></p>
-                </div>
-              </div>
-              <div>Création d’un banc de test d’une carte électronique pour des ventilateurs dans un A350.</div>
-              <ul>
-                <li>Partie informatique faite en C# avec la mise en place d’une IHM avec gestion des fichiers Excel et
-                  des différents instruments de mesure.</li>
-                <li>Partie électronique réalisée à partir de relais, de cartes I/O.</li>
+          </article>
+
+          <article class="timeline-panel" id="panel-dut" role="tabpanel" aria-labelledby="tab-dut" aria-hidden="true" data-timeline-panel="dut">
+            <header>
+              <h3>DUT Génie Électrique et Informatique Industrielle · IUT de Rennes</h3>
+              <p class="timeline-period">2015 - 2017</p>
+            </header>
+            <p>Projets réalisés :</p>
+            <ul>
+              <li>Élaboration d’un gant musical avec Raspberry Pi.</li>
+              <li>Cardiofréquencemètre complet, conception électronique et programmation en C.</li>
               </ul>
-            </div>
-          </div>
+          </article>
+
+          <article class="timeline-panel" id="panel-meggit" role="tabpanel" aria-labelledby="tab-meggit" aria-hidden="true" data-timeline-panel="meggit">
+            <header>
+              <h3>Stage de fin d'études DUT · Meggitt Artus Vietnam</h3>
+              <p class="timeline-period">Avril 2017 - Juin 2017 · Biên Hòa, Vietnam</p>
+            </header>
+            <p>Création d’un banc de test pour carte électronique de ventilateurs d'A350.</p>
+            <ul>
+              <li>Développement C# d'une IHM avec gestion Excel et instruments de mesure.</li>
+              <li>Conception électronique à base de relais et cartes I/O.</li>
+              </ul>
+          </article>
+
+          <article class="timeline-panel" id="panel-bac" role="tabpanel" aria-labelledby="tab-bac" aria-hidden="true" data-timeline-panel="bac">
+            <header>
+              <h3>Baccalauréat Scientifique · Lycée Saint-Magloire, Dol-de-Bretagne</h3>
+              <p class="timeline-period">2015</p>
+            </header>
+            <p>Option sciences de l'ingénieur et spécialité mathématiques.</p>
+          </article>
         </div>
 
       </div>
@@ -453,7 +481,7 @@
         <div class="col-12">
           <div class="dl-cv">
             <a class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300"
-              role="button" href="docs/CVEvanBlondeauDevops.pdf" target="_blank">
+              role="button" href="docs/CVEvanBlondeaudevops2025.pdf" target="_blank">
               <i data-feather="download" class="w-5 h-5 mr-2"></i>
               Télécharger mon CV DevOps
             </a>
@@ -605,7 +633,7 @@
                       <p class="text-gray-600 text-xs sm:text-sm">Saint-Pierre, La Réunion</p>
                     </div>
                   </div>
-                  <a href="https://www.google.com/maps/place/La+Réunion" target="_blank"
+                  <a href="https://www.google.com/maps/place/La+R%C3%A9union" target="_blank"
                     class="inline-flex items-center text-xs sm:text-sm text-blue-600 hover:text-blue-800 transition-colors">
                     <i data-feather="external-link" class="w-4 h-4 mr-2"></i>
                     Voir sur la carte

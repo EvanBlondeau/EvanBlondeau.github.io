@@ -375,4 +375,85 @@
       window.feather.replace();
     }
   });
+
+  // Timeline interaction
+  const initTimeline = () => {
+    const timeline = document.querySelector('[data-timeline]');
+    const items = document.querySelectorAll('[data-timeline-item]');
+    const panels = document.querySelectorAll('[data-timeline-panel]');
+
+    if (!timeline || items.length === 0 || panels.length === 0) {
+      return;
+    }
+
+    const activatePanel = (id, options = {}) => {
+      const { focusTarget = false } = options;
+      let targetItem = null;
+
+      items.forEach(item => {
+        const isActive = item.getAttribute('data-timeline-item') === id;
+        item.classList.toggle('is-active', isActive);
+        item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        item.setAttribute('tabindex', isActive ? '0' : '-1');
+        if (isActive) {
+          targetItem = item;
+        }
+      });
+
+      panels.forEach(panel => {
+        const isActive = panel.getAttribute('data-timeline-panel') === id;
+        panel.classList.toggle('is-active', isActive);
+        panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+      });
+
+      if (focusTarget && targetItem) {
+        targetItem.focus({ preventScroll: true });
+      }
+
+      if (window.feather && typeof window.feather.replace === 'function') {
+        window.feather.replace();
+      }
+    };
+
+    items.forEach((item, index) => {
+      item.setAttribute('tabindex', item.classList.contains('is-active') ? '0' : '-1');
+
+      item.addEventListener('click', () => {
+        const id = item.getAttribute('data-timeline-item');
+        activatePanel(id, { focusTarget: false });
+      });
+
+      item.addEventListener('keydown', (event) => {
+        const key = event.key;
+        if (key === 'Enter' || key === ' ') {
+          event.preventDefault();
+          const id = item.getAttribute('data-timeline-item');
+          activatePanel(id, { focusTarget: true });
+        }
+
+        if (key === 'ArrowRight' || key === 'ArrowDown') {
+          event.preventDefault();
+          const nextIndex = (index + 1) % items.length;
+          const nextItem = items[nextIndex];
+          const nextId = nextItem.getAttribute('data-timeline-item');
+          activatePanel(nextId, { focusTarget: true });
+        }
+
+        if (key === 'ArrowLeft' || key === 'ArrowUp') {
+          event.preventDefault();
+          const prevIndex = (index - 1 + items.length) % items.length;
+          const prevItem = items[prevIndex];
+          const prevId = prevItem.getAttribute('data-timeline-item');
+          activatePanel(prevId, { focusTarget: true });
+        }
+      });
+    });
+
+    const activeItem = document.querySelector('[data-timeline-item].is-active');
+    if (activeItem) {
+      activatePanel(activeItem.getAttribute('data-timeline-item'));
+    }
+  };
+
+  window.addEventListener('load', initTimeline);
 })();
