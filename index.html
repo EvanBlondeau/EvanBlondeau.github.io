@@ -122,32 +122,29 @@
             <h3 class="text-lg sm:text-xl md:text-2xl font-semibold ">Ingénieur Cloud &amp; DevOps.</h3>
             <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 gap-6 ">
               <div>
-                  <ul>
-                    <li><i data-feather="chevron-right"></i> <strong>Nom:</strong>&nbsp;Blondeau</li>
-                    <li><i data-feather="chevron-right"></i> <strong>Prénom:</strong>&nbsp;Evan</li>
-                    <li><i data-feather="chevron-right"></i> <strong>Localisation:</strong>&nbsp;La Réunion, France</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul>
-                    <li><i data-feather="chevron-right"></i> <strong>Age:</strong>&nbsp;23 ans</li>
-                    <li><i data-feather="chevron-right"></i> <strong>Formation:</strong>&nbsp;Diplôme d'ingénieur de l'ESIR
-                    </li>
-                    <li><i data-feather="chevron-right"></i> <strong>E-mail:</strong>&nbsp;evanblondeau@gmail.com</li>
-                  </ul>
+                <ul>
+                  <li><i data-feather="chevron-right"></i> <strong>Nom:</strong>&nbsp;Blondeau</li>
+                  <li><i data-feather="chevron-right"></i> <strong>Prénom:</strong>&nbsp;Evan</li>
+                  <li><i data-feather="chevron-right"></i> <strong>Localisation:</strong>&nbsp;La Réunion, France</li>
+                </ul>
+              </div>
+              <div>
+                <ul>
+                  <li><i data-feather="chevron-right"></i> <strong>Age:</strong>&nbsp;28 ans</li>
+                  <li><i data-feather="chevron-right"></i> <strong>Formation:</strong>&nbsp;Diplôme d'ingénieur de
+                    l'ESIR
+                  </li>
+                  <li><i data-feather="chevron-right"></i> <strong>E-mail:</strong>&nbsp;evanblondeau@gmail.com</li>
+                </ul>
               </div>
             </div>
             <p class="p-presentation text-justify">
-              Je me présente, Evan Blondeau, je viens de finir ma 5 ème année d'école d'ingénieur à l'ESIR en
-              technologie de l'information option IoT, sécurité et ville intelligente.
-              Qui se centrait plus sur l'univers du Cloud computing et toutes les technologies autour de ça, du
-              développement web, mobile en FullStack, de l'univers de l'Internet of Things et comment intéragir avec
-              eux.
-              J'ai effectué ma dernière année en alternance à Thales Services sur un projet interne de webcast sécurisé,
-              plus sur la partie fullsatck mais avec des bonnes connaissances en multimédia tel que HLS.
-              Je suis actuellement à la recherche d'un emploi dans le bassin rennais dans le DevOps et/ou Fullsatck car
-              les deux peuvent être entremélés selon moi. Donc n'hésitez pas à me <a href=#contact>contater</a>.
+              Curieux de nature, j’aime comprendre comment les systèmes fonctionnent.
+              Aujourd’hui Ingénieur DevOps & Cloud, j’évolue entre Kubernetes, GCP et l’Infrastructure as Code pour concevoir des environnements performants et durables. J’accorde une attention particulière à la fiabilité (SRE), à la sécurité (SecOps) et à l’optimisation des coûts (FinOps). 
+              J’accorde une grande importance à la collaboration, au partage de connaissances et à la veille technologique dans une approche DevOps complète.
             </p>
+            <p class="p-presentation text-justify">  N'hésitez pas à me <a href=#contact>contater</a> pour me parler de vos projets DevOps, Cloud, Pateform et infrastructe. </p>
+            
           </div>
         </div>
 
@@ -166,7 +163,23 @@
             réalisés.</p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Sélecteur d'affichage Resume: Vertical / Horizontal -->
+        <div class="view-selector flex justify-center mb-6">
+          <div role="tablist" aria-label="Choix d'affichage"
+            class="inline-flex bg-gray-100 rounded-full p-1 shadow text-gray-700">
+            <button type="button" role="tab" aria-selected="true" data-view="vertical"
+              class="px-4 py-2 text-sm font-medium rounded-full bg-white shadow focus:outline-none focus:ring-2 focus:ring-blue-500">
+              Vertical
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-view="horizontal"
+              class="px-4 py-2 text-sm font-medium rounded-full hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              Horizontal
+            </button>
+          </div>
+        </div>
+
+        <!-- Contenu du CV version verticale (existant) -->
+        <div id="vertical" class="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div class="lg:col-span-6">
             <h3 class="resume-title">Formation</h3>
             <div class="resume-item">
@@ -209,6 +222,31 @@
           <div class="lg:col-span-6">
             <h3 class="resume-title">Experiences professionnelles</h3>
             <div class="resume-item">
+              <h4>Ingénieur Cloud &amp; DevOps</h4>
+              <div class="grp-img-txt">
+                <img src="assets/img/vodalys.jpg" class="img-exp" alt="" />
+                <div class="txt-resume">
+                  <h5>janvier 2021 - aujourd'hui</h5>
+                  <p><em>Vodalys Rennes</em></p>
+                </div>
+              </div>
+              <div>Migration vers Kubernetes</div>
+              <ul>
+                <li>Conception et déploiement de clusters Kubernetes sur OVH et Google Cloud Platform (GKE)</li>
+                <li>Mise en place d’un système complet de supervision avec Prometheus, Grafana et Alertmanager</li>
+              </ul>
+              <div>Architecture GitOps</div>
+              <ul>
+                <li>Conception d’une chaîne CI/CD complète basée sur Gitea, Drone CI et FluxCD</li>
+                <li>Mise en place d’un flux GitOps fiable pour les déploiements automatisés</li>
+              </ul>
+              <div>Gestion d’infrastructure legacy</div>
+              <ul>
+                <li>Supervision et maintien en conditions opérationnelles de VMs VMware hébergées sur OVH</li>
+                <li>Amélioration continue des playbooks Ansible pour renforcer la stabilité et la maintenabilité</li>
+              </ul>
+            </div>
+            <div class="resume-item">
               <h4>Contrat de professionnalisation</h4>
               <div class="grp-img-txt">
                 <img src="assets/img/thales.jpeg" class="img-exp" alt="" />
@@ -217,13 +255,13 @@
                   <p><em>Thales Services Rennes</em></p>
                 </div>
               </div>
-              <div>Développement et conception de diverses fonctionnalités front-end et back-end :</div>
+              <div>Développement et conception de fonctionnalités front-end et back-end :</div>
               <ul>
-                <li>Recensement des erreurs du lecteur vidéo avec récupération des informations utiles à l'aide de
-                  HLS.js avec React et Redux</li>
-                <li>Utilisation de la PunchPlateform pour analyser ces données avec Kibana</li>
-                <li>Téléverser une vidéo depuis le portail</li>
-                <li>Lire une vidéo sur la plateforme depuis une redirection avec un lien externe</li>
+                <li>Mise en place d'un système de recensement et d'analyse des erreurs du lecteur vidéo</li>
+                <li>Récupération et traitement des informations via HLS.js, intégrées au front-end sous React et Redux</li>
+                <li>Exploitation des données sur la PunchPlatform et visualisation via Kibana</li>
+                <li>Développement de la fonctionnalité de téléversement de vidéos depuis le portail utilisateur</li>
+                <li>Ajout de la possibilité de lecture de vidéos depuis des liens externes</li>
               </ul>
             </div>
             <div class="resume-item">
@@ -250,19 +288,171 @@
                   <p><em>MEGGIT Artus Vietnam, Biên Hôa - Vietnam</em></p>
                 </div>
               </div>
-              <div>Création d’un banc de test d’une carte électronique pour des ventilateurs dans un A350.</div>
+              <div>Création d'un banc de test d'une carte électronique pour des ventilateurs dans un A350.</div>
               <ul>
-                <li>Partie informatique faite en C# avec la mise en place d’une IHM avec gestion des fichiers Excel et
-                  des différents instruments de mesure.</li>
+                <li>Partie informatique faite en C# avec la mise en place d'une IHM avec gestion des fichiers Excel et des différents instruments de mesure.</li>
                 <li>Partie électronique réalisée à partir de relais, de cartes I/O.</li>
+                <li>Partie mécanique réalisée à l'aide du logiciel SOLIDWORKS.</li>
               </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline horizontale moderne et responsive -->
+        <div id="horizontal" class="hidden">
+          <div class="horizontal-timeline relative">
+            <!-- Sentinel Tailwind classes for runtime toggles -->
+            <span aria-hidden="true" class="hidden ring-[#1f5297] bg-[#1f5297] border-[#1f5297]"></span>
+            <!-- Logos alignés horizontalement (timeline) -->
+            <ol id="horizontal-logos" class="timeline-horizontal overflow-x-auto snap-x snap-mandatory scroll-smooth touch-pan-x">
+              <!-- Entrées de la timeline -->
+              <li class="timeline-horizontal__item" data-entry="bac">
+                <button type="button" class="timeline-logo" data-key="bac" aria-controls="desc-bac" aria-expanded="false">
+                  <span class="timeline-logo__media">BAC</span>
+                </button>
+                <span class="timeline-horizontal__date">2015</span>
+              </li>
+              <li class="timeline-horizontal__item" data-entry="iut">
+                <button type="button" class="timeline-logo" data-key="iut" aria-controls="desc-iut" aria-expanded="false">
+                  <img src="assets/img/iut.png" alt="IUT de Rennes" class="timeline-logo__media" />
+                </button>
+                <span class="timeline-horizontal__date">2017</span>
+              </li>
+              <li class="timeline-horizontal__item" data-entry="meggit">
+                <button type="button" class="timeline-logo" data-key="meggit" aria-controls="desc-meggit" aria-expanded="false">
+                  <img src="assets/img/meggit.png" alt="Meggit" class="timeline-logo__media" />
+                </button>
+                <span class="timeline-horizontal__date">2017</span>
+              </li>
+              <li class="timeline-horizontal__item" data-entry="esir">
+                <button type="button" class="timeline-logo" data-key="esir" aria-controls="desc-esir" aria-expanded="false">
+                  <img src="assets/img/esir.png" alt="ESIR" class="timeline-logo__media" />
+                </button>
+                <span class="timeline-horizontal__date">2020</span>
+              </li>
+              <li class="timeline-horizontal__item" data-entry="univ">
+                <button type="button" class="timeline-logo" data-key="univ" aria-controls="desc-univ" aria-expanded="false">
+                  <img src="assets/img/univ.png" alt="Université de Rennes 1" class="timeline-logo__media" />
+                </button>
+                <span class="timeline-horizontal__date">2019</span>
+              </li>
+              <li class="timeline-horizontal__item" data-entry="thales">
+                <button type="button" class="timeline-logo" data-key="thales" aria-controls="desc-thales" aria-expanded="false">
+                  <img src="assets/img/thales.jpeg" alt="Thales" class="timeline-logo__media" />
+                </button>
+                <span class="timeline-horizontal__date">2020</span>
+              </li>
+              <li class="timeline-horizontal__item" data-entry="vodalys">
+                <button type="button" class="timeline-logo" data-key="vodalys" data-latest="true" aria-controls="desc-vodalys" aria-expanded="false">
+                  <img src="assets/img/vodalys.jpg" alt="Vodalys" class="timeline-logo__media" />
+                </button>
+                <span class="timeline-horizontal__date">2021+</span>
+              </li>
+            </ol>
+
+            <!-- Zone de description sous la timeline -->
+            <div id="horizontal-details" class="mt-2">
+              <!-- Message initial -->
+              <div id="desc-intro" data-content="intro"
+                class="transition-all duration-300 ease-out opacity-100 translate-y-0 bg-white rounded-lg p-4 shadow border border-[#e4edf9]">
+                <p class="text-sm md:text-base">Cliquez sur un logo pour afficher les détails correspondants.</p>
+              </div>
+              <!-- Contenus descriptifs (un seul visible à la fois) -->
+              <div id="desc-bac" data-content="bac"
+                class="transition-all duration-300 ease-out opacity-0 -translate-y-1 hidden bg-white rounded-lg p-4 shadow border border-[#e4edf9]">
+                <h4 class="font-semibold mb-1">Baccalauréat Scientifique</h4>
+                <p class="text-sm md:text-base">2015 — Lycée Saint Magloire, Dol de Bretagne.</p>
+              </div>
+              <div id="desc-esir" data-content="esir"
+                class="transition-all duration-300 ease-out opacity-0 -translate-y-1 hidden bg-white rounded-lg p-4 shadow border border-[#e4edf9]">
+                <h4 class="font-semibold mb-1">Diplôme d'ingénieur - ESIR</h4>
+                <div class="text-sm md:text-base space-y-2">
+                  <p>2017 - 2020 — École supérieure des ingénieurs de Rennes (ESIR).</p>
+                  <p>Spécialité technologie de l'information, option IoT, sécurité et ville intelligente.</p>
+                  <p>Responsable des sports et du basket au sein du BDE de l'école.</p>
+                </div>
+              </div>
+              <div id="desc-iut" data-content="iut"
+                class="transition-all duration-300 ease-out opacity-0 -translate-y-1 hidden bg-white rounded-lg p-4 shadow border border-[#e4edf9]">
+                <h4 class="font-semibold mb-1">DUT GEII - IUT de Rennes</h4>
+                <div class="text-sm md:text-base space-y-2">
+                  <p>2015 - 2017 — IUT de Rennes.</p>
+                  <div>Projets réalisés:</div>
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>Élaboration d’un gant musical à l'aide d'une Raspberry Pi.</li>
+                    <li>Réalisation d’un cardiofréquencemètre complet: cartes électroniques et programmation en C.</li>
+                  </ul>
+                </div>
+              </div>
+              <div id="desc-vodalys" data-content="vodalys"
+                class="transition-all duration-300 ease-out opacity-0 -translate-y-1 hidden bg-white rounded-lg p-4 shadow border border-[#e4edf9]">
+                <h4 class="font-semibold mb-1">Ingénieur Cloud & DevOps - Vodalys</h4>
+                <div class="text-sm md:text-base space-y-2">
+                  <p>Janvier 2021 - Aujourd'hui — Vodalys Rennes.</p>
+                  <div>Migration vers Kubernetes</div>
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>Conception et déploiement de clusters Kubernetes sur OVH et Google Cloud Platform (GKE).</li>
+                    <li>Mise en place d’un système complet de supervision avec Prometheus, Grafana et Alertmanager.</li>
+                  </ul>
+                  <div>Architecture GitOps</div>
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>Conception d’une chaîne CI/CD complète basée sur Gitea, Drone CI et FluxCD.</li>
+                    <li>Mise en place d’un flux GitOps fiable pour les déploiements automatisés.</li>
+                  </ul>
+                  <div>Gestion d’infrastructure legacy</div>
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>Supervision et maintien en conditions opérationnelles de VMs VMware hébergées sur OVH.</li>
+                    <li>Amélioration continue des playbooks Ansible pour renforcer la stabilité et la maintenabilité.</li>
+                  </ul>
+                </div>
+              </div>
+              <div id="desc-thales" data-content="thales"
+                class="transition-all duration-300 ease-out opacity-0 -translate-y-1 hidden bg-white rounded-lg p-4 shadow border border-[#e4edf9]">
+                <h4 class="font-semibold mb-1">Contrat pro - Thales Services</h4>
+                <div class="text-sm md:text-base space-y-2">
+                  <p>Septembre 2019 - Septembre 2020 — Thales Services Rennes.</p>
+                  <div>Développement et conception de fonctionnalités front-end et back-end :</div>
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>Mise en place d'un système de recensement et d'analyse des erreurs du lecteur vidéo</li>
+                    <li>Récupération et traitement des informations via HLS.js, intégrées au front-end sous React et Redux</li>
+                    <li>Exploitation des données sur la PunchPlatform et visualisation via Kibana</li>
+                    <li>Développement de la fonctionnalité de téléversement de vidéos depuis le portail utilisateur</li>
+                    <li>Ajout de la possibilité de lecture de vidéos depuis des liens externes</li>
+                  </ul>
+                </div>
+              </div>
+              <div id="desc-univ" data-content="univ"
+                class="transition-all duration-300 ease-out opacity-0 -translate-y-1 hidden bg-white rounded-lg p-4 shadow border border-[#e4edf9]">
+                <h4 class="font-semibold mb-1">Stage 4ème année - Université de Rennes 1 (MoBbi)</h4>
+                <div class="text-sm md:text-base space-y-2">
+                  <p>Juin 2019 - Septembre 2019 — Université de Rennes 1 - MoBbi.</p>
+                  <div>Développement d’un démonstrateur OBDII vers différents supports :</div>
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>Application Android en Java avec communication Bluetooth (application ↔ OBDII).</li>
+                    <li>Casque Microsoft Hololens: application en C# avec Unity et communication WebSocket.</li>
+                  </ul>
+                </div>
+              </div>
+              <div id="desc-meggit" data-content="meggit"
+                class="transition-all duration-300 ease-out opacity-0 -translate-y-1 hidden bg-white rounded-lg p-4 shadow border border-[#e4edf9]">
+                <h4 class="font-semibold mb-1">Stage fin d'étude DUT - MEGGIT Artus Vietnam</h4>
+                <div class="text-sm md:text-base space-y-2">
+                  <p>Avril 2017 - Juin 2017 — MEGGIT Artus Vietnam, Biên Hôa - Vietnam.</p>
+                  <div>Création d'un banc de test d'une carte électronique pour des ventilateurs dans un A350.</div>
+                  <ul class="list-disc pl-5 space-y-1">
+                    <li>Partie informatique faite en C# avec la mise en place d'une IHM avec gestion des fichiers Excel et des différents instruments de mesure.</li>
+                    <li>Partie électronique réalisée à partir de relais, de cartes I/O.</li>
+                    <li>Partie mécanique réalisée à l'aide du logiciel SOLIDWORKS.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
       </div>
     </section><!-- End Resume Section -->
-  
+
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills">
       <div class="container mx-auto px-4">
@@ -495,28 +685,37 @@
             Cette passion me permet de capturer la beauté de la nature et de partager ces moments uniques.</p>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
+
           <!-- Carte de photographie professionnelle -->
           <div class="lg:col-span-1">
-            <div class="bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 rounded-xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 h-full border border-white/20">
+            <div
+              class="bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 rounded-xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 h-full border border-white/20">
               <!-- Header avec icône et titre -->
               <div class="text-center mb-8">
                 <div class="relative mb-6">
-                  <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-lg opacity-30"></div>
-                  <div class="relative bg-white p-4 rounded-full shadow-lg mx-auto w-20 h-20 flex items-center justify-center">
+                  <div
+                    class="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-lg opacity-30">
+                  </div>
+                  <div
+                    class="relative bg-white p-4 rounded-full shadow-lg mx-auto w-20 h-20 flex items-center justify-center">
                     <i data-feather="camera" class="w-10 h-10 text-blue-600"></i>
                   </div>
                 </div>
-                <h4 class="font-bold text-2xl mb-2 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Photographie</h4>
-                <p class="text-gray-600 text-sm leading-relaxed">Passionné de photographie, je capture la beauté de la nature à travers deux univers complémentaires</p>
+                <h4
+                  class="font-bold text-2xl mb-2 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                  Photographie</h4>
+                <p class="text-gray-600 text-sm leading-relaxed">Passionné de photographie, je capture la beauté de la
+                  nature à travers deux univers complémentaires</p>
               </div>
-              
+
               <!-- Spécialités avec design professionnel -->
               <div class="space-y-4 mb-8">
                 <!-- Photographie Animalière -->
-                <div class="group bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-md">
+                <div
+                  class="group bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-blue-100 hover:border-blue-200 transition-all duration-300 hover:shadow-md">
                   <div class="flex items-center space-x-4">
-                    <div class="bg-gradient-to-br from-blue-100 to-blue-200 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                    <div
+                      class="bg-gradient-to-br from-blue-100 to-blue-200 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
                       <i data-feather="camera" class="w-6 h-6 text-blue-600"></i>
                     </div>
                     <div class="flex-1">
@@ -529,11 +728,13 @@
                     </div>
                   </div>
                 </div>
-                
+
                 <!-- Photographie Sous-marine -->
-                <div class="group bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-cyan-100 hover:border-cyan-200 transition-all duration-300 hover:shadow-md">
+                <div
+                  class="group bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-cyan-100 hover:border-cyan-200 transition-all duration-300 hover:shadow-md">
                   <div class="flex items-center space-x-4">
-                    <div class="bg-gradient-to-br from-cyan-100 to-cyan-200 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                    <div
+                      class="bg-gradient-to-br from-cyan-100 to-cyan-200 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
                       <i data-feather="droplet" class="w-6 h-6 text-cyan-600"></i>
                     </div>
                     <div class="flex-1">
@@ -552,9 +753,11 @@
               <div class="text-center">
                 <a href="https://www.instagram.com/evanbld.photo/?hl=fr" target="_blank"
                   class="group inline-flex items-center bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white px-8 py-4 rounded-xl hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full justify-center">
-                  <i data-feather="instagram" class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+                  <i data-feather="instagram"
+                    class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300"></i>
                   <span>Découvrir mes photos</span>
-                  <i data-feather="arrow-right" class="w-4 h-4 ml-3 group-hover:translate-x-1 transition-transform duration-300"></i>
+                  <i data-feather="arrow-right"
+                    class="w-4 h-4 ml-3 group-hover:translate-x-1 transition-transform duration-300"></i>
                 </a>
               </div>
             </div>
@@ -568,8 +771,8 @@
                 <p class="text-gray-600">Découvrez mes dernières captures animalières et sous-marines</p>
               </div>
 
-               <!-- Elfsight Instagram Feed -->
-               <div class="elfsight-app-c3c3daf9-1ed2-4aef-ad37-8c51c0210195" data-elfsight-app-lazy></div>
+              <!-- Elfsight Instagram Feed -->
+              <div class="elfsight-app-c3c3daf9-1ed2-4aef-ad37-8c51c0210195" data-elfsight-app-lazy></div>
             </div>
           </div>
 
@@ -605,7 +808,7 @@
                       <p class="text-gray-600 text-xs sm:text-sm">Saint-Pierre, La Réunion</p>
                     </div>
                   </div>
-                  <a href="https://www.google.com/maps/place/La+Réunion" target="_blank"
+                  <a href="https://www.google.com/maps/place/La+R%C3%A9union" target="_blank"
                     class="inline-flex items-center text-xs sm:text-sm text-blue-600 hover:text-blue-800 transition-colors">
                     <i data-feather="external-link" class="w-4 h-4 mr-2"></i>
                     Voir sur la carte
@@ -709,4 +912,4 @@
 
 </body>
 
-</html> 
+</html>

@@ -375,4 +375,146 @@
       window.feather.replace();
     }
   });
+
+  // Resume: view selector (Vertical/Horizontal) and horizontal timeline behavior
+  const initResumeSection = () => {
+    const resume = document.querySelector('#resume');
+    if (!resume) return;
+
+    const vertical = resume.querySelector('#vertical');
+    const horizontal = resume.querySelector('#horizontal');
+    const selector = resume.querySelector('.view-selector');
+    const selectorButtons = selector ? Array.from(selector.querySelectorAll('button[data-view]')) : [];
+
+    // Update selected tab styles and toggle sections visibility
+    const setView = (view) => {
+      selectorButtons.forEach((btn) => {
+        const isActive = btn.getAttribute('data-view') === view;
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        btn.classList.toggle('bg-white', isActive);
+        btn.classList.toggle('shadow', isActive);
+        btn.classList.toggle('hover:text-gray-900', !isActive);
+      });
+      if (view === 'horizontal') {
+        if (vertical) vertical.classList.add('hidden');
+        if (horizontal) horizontal.classList.remove('hidden');
+        // Sélectionner par défaut l'élément le plus récent
+        showLatestDefault();
+      } else {
+        if (horizontal) horizontal.classList.add('hidden');
+        if (vertical) vertical.classList.remove('hidden');
+      }
+    };
+
+    // Bind click handlers for selector
+    selectorButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const view = btn.getAttribute('data-view') || 'vertical';
+        setView(view);
+      });
+    });
+
+    // Default view is vertical
+    setView('vertical');
+
+    // Timeline logic (horizontal)
+    const logosRow = resume.querySelector('#horizontal-logos');
+    const logoButtons = logosRow ? Array.from(logosRow.querySelectorAll('.timeline-logo')) : [];
+    const detailsContainer = resume.querySelector('#horizontal-details');
+    const detailBlocks = detailsContainer ? Array.from(detailsContainer.querySelectorAll('[data-content]')) : [];
+
+    const hideAllDetails = () => {
+      detailBlocks.forEach((el) => {
+        el.classList.add('opacity-0', '-translate-y-1');
+        el.classList.remove('opacity-100', 'translate-y-0');
+        el.classList.add('hidden');
+        el.style.removeProperty('max-height');
+      });
+    };
+
+    const showDetail = (key) => {
+      hideAllDetails();
+      const target = detailBlocks.find((el) => el.getAttribute('data-content') === key);
+      if (!target) return;
+      // Prépare l'animation d'opacité/translation uniquement (pas de hauteur)
+      target.classList.remove('hidden');
+      target.classList.add('opacity-0', '-translate-y-1');
+      target.classList.remove('opacity-100', 'translate-y-0');
+      // Forcer un reflow avant de lancer l'anim
+      void target.getBoundingClientRect().height;
+      target.classList.remove('opacity-0', '-translate-y-1');
+      target.classList.add('opacity-100', 'translate-y-0');
+    };
+
+    const setActiveLogo = (activeBtn) => {
+      logoButtons.forEach((btn) => {
+        const isActive = btn === activeBtn;
+        btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        const mediaEl = btn.querySelector('.timeline-logo__media');
+        const entry = btn.closest('.timeline-horizontal__item');
+        const date = entry ? entry.querySelector('.timeline-horizontal__date') : null;
+        if (!mediaEl) return;
+        if (isActive) {
+          mediaEl.classList.remove('grayscale');
+          mediaEl.classList.add('timeline-logo__media--active');
+          if (entry) entry.classList.add('timeline-horizontal__item--active');
+          if (date) date.classList.add('timeline-horizontal__date--active');
+        } else {
+          mediaEl.classList.add('grayscale');
+          mediaEl.classList.remove('timeline-logo__media--active');
+          if (entry) entry.classList.remove('timeline-horizontal__item--active');
+          if (date) date.classList.remove('timeline-horizontal__date--active');
+        }
+      });
+    };
+
+    const resetTimeline = () => {
+      logoButtons.forEach((btn) => {
+        const mediaEl = btn.querySelector('.timeline-logo__media');
+        const entry = btn.closest('.timeline-horizontal__item');
+        const date = entry ? entry.querySelector('.timeline-horizontal__date') : null;
+        if (mediaEl) {
+          mediaEl.classList.add('grayscale');
+          mediaEl.classList.remove('timeline-logo__media--active');
+        }
+        btn.setAttribute('aria-expanded', 'false');
+        if (entry) entry.classList.remove('timeline-horizontal__item--active');
+        if (date) date.classList.remove('timeline-horizontal__date--active');
+      });
+      hideAllDetails();
+    };
+
+    const centerLogo = (btn) => {
+      if (!logosRow || !btn) return;
+      const entry = btn.closest('.timeline-horizontal__item');
+      const target = entry || btn;
+      const offset = target.offsetLeft - (logosRow.clientWidth - target.clientWidth) / 2;
+      logosRow.scrollTo({ left: Math.max(0, offset), behavior: 'smooth' });
+    };
+
+    const showLatestDefault = () => {
+      if (!logosRow || !logoButtons.length) return;
+      resetTimeline();
+      const latestBtn = logosRow.querySelector('[data-latest="true"]') || logoButtons[logoButtons.length - 1];
+      if (!latestBtn) return;
+      const key = latestBtn.getAttribute('data-key');
+      if (!key) return;
+      setActiveLogo(latestBtn);
+      showDetail(key);
+      centerLogo(latestBtn);
+    };
+
+    if (logosRow && logoButtons.length && detailBlocks.length) {
+      logosRow.addEventListener('click', (e) => {
+        const btn = e.target && e.target.closest('.timeline-logo');
+        if (!btn) return;
+        const key = btn.getAttribute('data-key');
+        if (!key) return;
+        setActiveLogo(btn);
+        showDetail(key);
+      });
+    }
+  };
+
+  window.addEventListener('load', initResumeSection);
 })();
