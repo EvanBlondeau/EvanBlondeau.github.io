@@ -418,8 +418,8 @@
     setView('vertical');
 
     // Timeline logic (horizontal)
-    const logosRow = resume.querySelector('#horizontal-logos');
-    const logoButtons = logosRow ? Array.from(logosRow.querySelectorAll('.timeline-logo')) : [];
+    const timelineContainer = resume.querySelector('.timeline-container');
+    const logoButtons = timelineContainer ? Array.from(timelineContainer.querySelectorAll('.timeline-logo')) : [];
     const detailsContainer = resume.querySelector('#horizontal-details');
     const detailBlocks = detailsContainer ? Array.from(detailsContainer.querySelectorAll('[data-content]')) : [];
 
@@ -450,68 +450,60 @@
       logoButtons.forEach((btn) => {
         const isActive = btn === activeBtn;
         btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-        const mediaEl = btn.querySelector('.timeline-logo__media');
-        const entry = btn.closest('.timeline-horizontal__item');
-        const date = entry ? entry.querySelector('.timeline-horizontal__date') : null;
-        if (!mediaEl) return;
+        
         if (isActive) {
-          mediaEl.classList.remove('grayscale');
-          mediaEl.classList.add('timeline-logo__media--active');
-          if (entry) entry.classList.add('timeline-horizontal__item--active');
-          if (date) date.classList.add('timeline-horizontal__date--active');
+          btn.classList.add('active');
         } else {
-          mediaEl.classList.add('grayscale');
-          mediaEl.classList.remove('timeline-logo__media--active');
-          if (entry) entry.classList.remove('timeline-horizontal__item--active');
-          if (date) date.classList.remove('timeline-horizontal__date--active');
+          btn.classList.remove('active');
         }
       });
     };
 
     const resetTimeline = () => {
       logoButtons.forEach((btn) => {
-        const mediaEl = btn.querySelector('.timeline-logo__media');
-        const entry = btn.closest('.timeline-horizontal__item');
-        const date = entry ? entry.querySelector('.timeline-horizontal__date') : null;
-        if (mediaEl) {
-          mediaEl.classList.add('grayscale');
-          mediaEl.classList.remove('timeline-logo__media--active');
-        }
         btn.setAttribute('aria-expanded', 'false');
-        if (entry) entry.classList.remove('timeline-horizontal__item--active');
-        if (date) date.classList.remove('timeline-horizontal__date--active');
+        btn.classList.remove('active');
       });
       hideAllDetails();
     };
 
-    const centerLogo = (btn) => {
-      if (!logosRow || !btn) return;
-      const entry = btn.closest('.timeline-horizontal__item');
-      const target = entry || btn;
-      const offset = target.offsetLeft - (logosRow.clientWidth - target.clientWidth) / 2;
-      logosRow.scrollTo({ left: Math.max(0, offset), behavior: 'smooth' });
-    };
-
     const showLatestDefault = () => {
-      if (!logosRow || !logoButtons.length) return;
+      if (!logoButtons.length) return;
       resetTimeline();
-      const latestBtn = logosRow.querySelector('[data-latest="true"]') || logoButtons[logoButtons.length - 1];
-      if (!latestBtn) return;
-      const key = latestBtn.getAttribute('data-key');
+      const latestBtn = timelineContainer ? timelineContainer.querySelector('[data-latest="true"]') : null;
+      const btnToShow = latestBtn || logoButtons[logoButtons.length - 1];
+      if (!btnToShow) return;
+      const key = btnToShow.getAttribute('data-key');
       if (!key) return;
-      setActiveLogo(latestBtn);
+      setActiveLogo(btnToShow);
       showDetail(key);
-      centerLogo(latestBtn);
     };
 
-    if (logosRow && logoButtons.length && detailBlocks.length) {
-      logosRow.addEventListener('click', (e) => {
+    // Timeline click handlers (logos et barres)
+    if (timelineContainer && logoButtons.length && detailBlocks.length) {
+      timelineContainer.addEventListener('click', (e) => {
+        // Vérifier si on a cliqué sur un logo
         const btn = e.target && e.target.closest('.timeline-logo');
-        if (!btn) return;
-        const key = btn.getAttribute('data-key');
-        if (!key) return;
-        setActiveLogo(btn);
-        showDetail(key);
+        if (btn) {
+          const key = btn.getAttribute('data-key');
+          if (!key) return;
+          setActiveLogo(btn);
+          showDetail(key);
+          return;
+        }
+        
+        // Vérifier si on a cliqué sur une barre
+        const bar = e.target && e.target.closest('.timeline-bar');
+        if (bar) {
+          const key = bar.getAttribute('data-key');
+          if (!key) return;
+          // Trouver le logo correspondant
+          const correspondingLogo = timelineContainer.querySelector(`.timeline-logo[data-key="${key}"]`);
+          if (correspondingLogo) {
+            setActiveLogo(correspondingLogo);
+            showDetail(key);
+          }
+        }
       });
     }
   };
