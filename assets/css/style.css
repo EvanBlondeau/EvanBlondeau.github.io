@@ -1585,6 +1585,26 @@ body.mobile-nav-active .loisirs [class*=" elfsight-app-"] {
   background: #9ca3af;
 }
 
+/* Marqueurs verticaux pour les années */
+.year-tick {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 12px;
+  background: #6b7280;
+  transform: translateX(-50%);
+}
+
+/* Marqueurs verticaux pour les mois (plus fins) */
+.month-tick {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 8px;
+  background: #d1d5db;
+  transform: translateX(-50%);
+}
+
 /* Années en dessous de la ligne */
 .timeline-years {
   position: absolute;
