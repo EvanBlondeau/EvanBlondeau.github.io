@@ -1526,11 +1526,39 @@ body.mobile-nav-active .loisirs [class*=" elfsight-app-"] {
 }
 
 .timeline-container {
-  min-width: 1200px;
+  width: 100%;
+  min-width: 100%;
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
   gap: 0;
+}
+
+/* Sur grand écran (desktop), pas de scroll */
+@media (min-width: 1200px) {
+  .horizontal-timeline-wrapper {
+    overflow-x: visible;
+  }
+  
+  .timeline-container {
+    min-width: 100%;
+  }
+  
+  .timeline-logo {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+  }
+  
+  .timeline-bar {
+    height: 25px;
+    min-height: 25px;
+    max-height: 25px;
+  }
+  
+  .year-marker {
+    font-size: 0.8rem;
+  }
 }
 
 /* Zone de description - pas de scroll horizontal */
@@ -1692,6 +1720,7 @@ body.mobile-nav-active .loisirs [class*=" elfsight-app-"] {
 @media (max-width: 768px) {
   .horizontal-timeline-wrapper {
     padding: 1rem 0;
+    overflow-x: auto;
   }
   
   .timeline-container {
