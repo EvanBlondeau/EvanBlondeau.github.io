@@ -3,7 +3,7 @@
     "slug": "tls",
     "title": "Thales Live Streaming - Flutter",
     "year": 2020,
-    "image": "assets/img/portfolio/tls.png",
+    "image": "assets/img/portfolio/tls-optimized.png",
     "path": "projects/tls.html",
     "tags": ["2020"]
   },
@@ -11,7 +11,7 @@
     "slug": "veliot",
     "title": "VelIoT - Vélo Connecté",
     "year": 2020,
-    "image": "assets/img/portfolio/Picture1.png",
+    "image": "assets/img/portfolio/Picture1-optimized.png",
     "path": "projects/veliot.html",
     "tags": ["2020"]
   },
@@ -19,7 +19,7 @@
     "slug": "obdii",
     "title": "Démonstrateur OBDII",
     "year": 2019,
-    "image": "assets/img/portfolio/obdII.png",
+    "image": "assets/img/portfolio/obdII-optimized.png",
     "path": "projects/obdii.html",
     "tags": ["2019"]
   },
@@ -27,7 +27,7 @@
     "slug": "knx",
     "title": "KNX - IoT Building",
     "year": 2019,
-    "image": "assets/img/portfolio/konnex_IOT.png",
+    "image": "assets/img/portfolio/konnex_IOT-optimized.png",
     "path": "projects/knx.html",
     "tags": ["2019"]
   },
@@ -35,7 +35,7 @@
     "slug": "smartcamera",
     "title": "SmartCamera - caméra connecté",
     "year": 2018,
-    "image": "assets/img/portfolio/Picture9.png",
+    "image": "assets/img/portfolio/Picture9-optimized.png",
     "path": "projects/smartcamera.html",
     "tags": ["2018 et -", "other"]
   },
@@ -43,7 +43,7 @@
     "slug": "hackaton",
     "title": "Hackaton Insomnihack 2.0",
     "year": 2018,
-    "image": "assets/img/portfolio/Picture5.png",
+    "image": "assets/img/portfolio/Picture5-optimized.png",
     "path": "projects/hackaton.html",
     "tags": ["2018 et -", "other"]
   },
@@ -51,7 +51,7 @@
     "slug": "crowdchoice",
     "title": "Crowd Choice - Plateforme participative",
     "year": 2019,
-    "image": "assets/img/portfolio/crowdchoice/ico2.JPG",
+    "image": "assets/img/portfolio/crowdchoice/ico2-optimized.jpg",
     "path": "projects/crowdchoice.html",
     "tags": ["2019", "other"]
   }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
@@ -19,13 +19,26 @@
     gtag('config', 'G-012VE9YMC3');
   </script>
 
+  <!-- Preconnect pour améliorer les performances -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://elfsightcdn.com">
+
+  <!-- Préchargement des ressources critiques -->
+  <link rel="preload" href="assets/css/style.css" as="style">
+  <link rel="preload" href="assets/img/ble-optimized.jpg" as="image">
+  <link rel="preload" href="assets/img/profile-img-optimized.jpg" as="image">
+
   <!-- Favicons -->
-  <link href="assets/img/profile-img.jpg" rel="icon">
-  <link href="assets/img/profile-img.jpg" rel="apple-touch-icon">
+  <link href="assets/img/profile-img-optimized.jpg" rel="icon">
+  <link href="assets/img/profile-img-optimized.jpg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- Tailwind CSS (CDN) -->
@@ -46,37 +59,37 @@
 <body>
 
   <!-- ======= Mobile nav toggle button ======= -->
-  <button type="button" class="mobile-nav-toggle xl:hidden"><i data-feather="menu"></i></button>
+  <button type="button" class="mobile-nav-toggle xl:hidden" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="header"><i data-feather="menu" aria-hidden="true"></i></button>
 
   <!-- ======= Header ======= -->
   <header id="header">
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <img src="assets/img/profile-img-optimized.jpg" alt="Photo de profil d'Evan Blondeau, Ingénieur Cloud & DevOps" class="img-fluid rounded-circle">
         <h1 class="text-white"><a href="#hero">Evan Blondeau</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="https://www.instagram.com/evanbld.photo/?hl=fr" class="instagram"><i
-              data-feather="instagram"></i></a>
-          <a href="https://github.com/EvanBlondeau" class="github"><i data-feather="github"></i></a>
-          <a href="https://www.linkedin.com/in/evan-blondeau-7b249a12a/" class="linkedin"><i
-              data-feather="linkedin"></i></a>
+          <a href="https://www.instagram.com/evanbld.photo/?hl=fr" class="instagram" aria-label="Visiter mon profil Instagram"><i
+              data-feather="instagram" aria-hidden="true"></i></a>
+          <a href="https://github.com/EvanBlondeau" class="github" aria-label="Visiter mon profil GitHub"><i data-feather="github" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/evan-blondeau-7b249a12a/" class="linkedin" aria-label="Visiter mon profil LinkedIn"><i
+              data-feather="linkedin" aria-hidden="true"></i></a>
         </div>
       </div>
 
-      <nav class="nav-menu">
+      <nav class="nav-menu" aria-label="Navigation principale">
         <ul>
-          <li class="active"><a href="#hero"><i data-feather="home"></i> <span>Accueil</span></a></li>
-          <li><a href="#about"><i data-feather="user"></i> <span>A propos</span></a></li>
-          <li><a href="#resume"><i data-feather="file-text"></i> <span>Experience professionnelle</span></a></li>
-          <li><a href="#skills"><i data-feather="server"></i> Compétences</a></li>
-          <li><a href="#portfolio"><i data-feather="book-open"></i> Portfolio</a></li>
-          <li><a href="#loisirs"><i data-feather="camera"></i> Loisirs</a></li>
-          <li><a href="#contact"><i data-feather="mail"></i> Contact</a></li>
+          <li class="active"><a href="#hero" aria-current="page"><i data-feather="home" aria-hidden="true"></i> <span>Accueil</span></a></li>
+          <li><a href="#about"><i data-feather="user" aria-hidden="true"></i> <span>A propos</span></a></li>
+          <li><a href="#resume"><i data-feather="file-text" aria-hidden="true"></i> <span>Experience professionnelle</span></a></li>
+          <li><a href="#skills"><i data-feather="server" aria-hidden="true"></i> <span>Compétences</span></a></li>
+          <li><a href="#portfolio"><i data-feather="book-open" aria-hidden="true"></i> <span>Portfolio</span></a></li>
+          <li><a href="#loisirs"><i data-feather="camera" aria-hidden="true"></i> <span>Loisirs</span></a></li>
+          <li><a href="#contact"><i data-feather="mail" aria-hidden="true"></i> <span>Contact</span></a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
-      <button type="button" class="mobile-nav-toggle xl:hidden"><i class="icofont-navigation-menu"></i></button>
+      <button type="button" class="mobile-nav-toggle xl:hidden" aria-label="Fermer le menu de navigation" aria-expanded="false" aria-controls="header"><i class="icofont-navigation-menu" aria-hidden="true"></i></button>
 
     </div>
   </header><!-- End Header -->
@@ -84,12 +97,12 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="flex flex-col justify-center items-center">
     <div class="profile">
-      <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+      <img src="assets/img/profile-img-optimized.jpg" alt="Photo de profil d'Evan Blondeau" class="img-fluid rounded-circle">
       <div class="social-links mt-3 text-center">
-        <a href="https://www.instagram.com/evanbld.photo/?hl=fr" class="instagram"><i data-feather="instagram"></i></a>
-        <a href="https://github.com/EvanBlondeau" class="github"><i data-feather="github"></i></a>
-        <a href="https://www.linkedin.com/in/evan-blondeau-7b249a12a/" class="linkedin"><i
-            data-feather="linkedin"></i></a>
+        <a href="https://www.instagram.com/evanbld.photo/?hl=fr" class="instagram" aria-label="Visiter mon profil Instagram"><i data-feather="instagram" aria-hidden="true"></i></a>
+        <a href="https://github.com/EvanBlondeau" class="github" aria-label="Visiter mon profil GitHub"><i data-feather="github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/evan-blondeau-7b249a12a/" class="linkedin" aria-label="Visiter mon profil LinkedIn"><i
+            data-feather="linkedin" aria-hidden="true"></i></a>
       </div>
     </div>
     <div class="hero-container">
@@ -116,7 +129,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
           <div class="md:col-span-4">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+            <img src="assets/img/profile-img-optimized.jpg" class="img-fluid" alt="Photo de profil d'Evan Blondeau, Ingénieur Cloud & DevOps">
           </div>
           <div class="md:col-span-8 pt-4 md:pt-0 content space-y-3">
             <h3 class="text-lg sm:text-xl md:text-2xl font-semibold ">Ingénieur Cloud &amp; DevOps.</h3>
@@ -185,7 +198,7 @@
             <div class="resume-item">
               <h4>Diplôme d'ingénieur de l'ESIR</h4>
               <div class="grp-img-txt">
-                <img src="assets/img/esir.png" class="img-exp" alt="" />
+                <img src="assets/img/esir-optimized.png" class="img-exp" alt="Logo de l'École Supérieure d'Ingénieurs de Rennes (ESIR)" />
                 <div class="txt-resume">
                   <h5>septembre 2017 - septembre 2020</h5>
                   <p><em>École supérieur des ingénieurs de Rennes</em></p>
@@ -197,7 +210,7 @@
             <div class="resume-item">
               <h4>DUT Génie électrique et informatique industrielle</h4>
               <div class="grp-img-txt">
-                <img src="assets/img/iut.png" class="img-exp" alt="" />
+                <img src="assets/img/iut-optimized.png" class="img-exp" alt="Logo de l'IUT de Rennes" />
                 <div class="txt-resume">
                   <h5>septembre 2015 - juillet 2017</h5>
                   <p><em>IUT de Rennes</em></p>
@@ -224,7 +237,7 @@
             <div class="resume-item">
               <h4>Ingénieur Cloud &amp; DevOps</h4>
               <div class="grp-img-txt">
-                <img src="assets/img/vodalys.jpg" class="img-exp" alt="" />
+                <img src="assets/img/vodalys-optimized.jpg" class="img-exp" alt="Logo de Vodalys Rennes" />
                 <div class="txt-resume">
                   <h5>janvier 2021 - aujourd'hui</h5>
                   <p><em>Vodalys Rennes</em></p>
@@ -249,7 +262,7 @@
             <div class="resume-item">
               <h4>Contrat de professionnalisation</h4>
               <div class="grp-img-txt">
-                <img src="assets/img/thales.jpeg" class="img-exp" alt="" />
+                <img src="assets/img/thales-optimized.jpg" class="img-exp" alt="Logo de Thales Services Rennes" />
                 <div class="txt-resume">
                   <h5>octobre 2019 - octobre 2020</h5>
                   <p><em>Thales Services Rennes</em></p>
@@ -267,7 +280,7 @@
             <div class="resume-item">
               <h4>Stage de 4ème année</h4>
               <div class="grp-img-txt">
-                <img src="assets/img/univ.png" class="img-exp" alt="" />
+                <img src="assets/img/univ-optimized.png" class="img-exp" alt="Logo de l'Université de Rennes 1" />
                 <div class="txt-resume">
                   <h5>juillet 2019 - septembre 2019</h5>
                   <p><em>Université de Rennes 1 - MoBbi</em></p>
@@ -282,7 +295,7 @@
             <div class="resume-item">
               <h4>Stage de fin d'étude de DUT</h4>
               <div class="grp-img-txt">
-                <img src="assets/img/meggit.png" class="img-exp" alt="" />
+                <img src="assets/img/meggit-optimized.png" class="img-exp" alt="Logo de MEGGIT Artus Vietnam" />
                 <div class="txt-resume">
                   <h5>avril 2017 - juillet 2017</h5>
                   <p><em>MEGGIT Artus Vietnam, Biên Hôa - Vietnam</em></p>

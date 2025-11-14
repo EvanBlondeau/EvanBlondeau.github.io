@@ -76,6 +76,10 @@
   if (toggleBtns.length) {
     const updateToggleIcons = (isActive) => {
       toggleBtns.forEach(btn => {
+        // Mettre à jour aria-expanded pour l'accessibilité
+        btn.setAttribute('aria-expanded', isActive);
+        btn.setAttribute('aria-label', isActive ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation');
+        
         const icon = btn.querySelector('i, svg');
         if (!icon) return;
         if (icon.tagName.toLowerCase() === 'i') {
@@ -509,4 +513,111 @@
   };
 
   window.addEventListener('load', initResumeSection);
+
+  // Détection du support WebP (fonction réutilisable)
+  const supportsWebP = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 1;
+    canvas.height = 1;
+    return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+  };
+
+  // Optimisation de l'image de fond : détection WebP et chargement de la version optimisée
+  const optimizeHeroBackground = () => {
+    const hero = document.getElementById('hero');
+    if (!hero) return;
+
+    // Si WebP est supporté, utiliser la version WebP (plus légère)
+    if (supportsWebP()) {
+      // Déterminer le chemin correct selon la page (index.html ou projets/)
+      const isProjectPage = window.location.pathname.includes('/projects/');
+      const imagePath = isProjectPage ? '../assets/img/ble.webp' : 'assets/img/ble.webp';
+      hero.style.backgroundImage = `linear-gradient(rgba(5, 13, 24, 0.3), rgba(5, 13, 24, 0.3)), url("${imagePath}")`;
+    }
+    // Sinon, le CSS utilise déjà ble-optimized.jpg comme fallback
+  };
+
+  // Fonction pour obtenir le chemin optimisé d'une image
+  const getOptimizedPath = (originalPath) => {
+    if (!originalPath) return null;
+    // Ignorer les images déjà optimisées, WebP ou externes
+    if (originalPath.includes('-optimized.') || originalPath.includes('.webp') || 
+        originalPath.startsWith('http://') || originalPath.startsWith('https://')) {
+      return null;
+    }
+    return originalPath.replace(/\.(jpg|jpeg|JPG|JPEG)$/i, '-optimized.jpg')
+                       .replace(/\.(png|PNG)$/i, '-optimized.png');
+  };
+
+  // Fonction pour obtenir le chemin WebP d'une image
+  const getWebPPath = (path) => {
+    if (!path) return null;
+    if (path.includes('.webp') || path.startsWith('http://') || path.startsWith('https://')) {
+      return null;
+    }
+    // Si c'est déjà une version optimisée, créer WebP à partir de l'original
+    const originalPath = path.replace(/-optimized\.(jpg|png)$/i, '.$1');
+    return originalPath.replace(/\.(jpg|jpeg|png|JPG|JPEG|PNG)$/i, '.webp');
+  };
+
+  // Optimisation automatique de toutes les images : remplacer par WebP si disponible
+  // Les images utilisent déjà les versions optimisées dans le HTML
+  const optimizeAllImages = () => {
+    if (!supportsWebP()) return; // Pas de WebP, on garde les versions optimisées
+
+    // Optimiser les balises <img> : remplacer les versions optimisées par WebP
+    document.querySelectorAll('img[src]').forEach(img => {
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      // Ignorer les images déjà en WebP ou les images externes
+      if (src.includes('.webp') || src.startsWith('http://') || src.startsWith('https://')) return;
+
+      // Créer le chemin WebP à partir de l'image actuelle (optimisée ou originale)
+      const webpPath = getWebPPath(src);
+      if (webpPath) {
+        // Vérifier si le fichier WebP existe
+        const testWebP = new Image();
+        testWebP.onload = () => {
+          img.src = webpPath;
+        };
+        testWebP.src = webpPath;
+      }
+    });
+
+    // Optimiser les images de fond CSS
+    document.querySelectorAll('[style*="background-image"]').forEach(el => {
+      const style = el.getAttribute('style');
+      if (!style || !style.includes('url(')) return;
+
+      const urlMatch = style.match(/url\(['"]?([^'")]+)['"]?\)/);
+      if (!urlMatch) return;
+
+      const bgSrc = urlMatch[1];
+      if (bgSrc.includes('.webp') || bgSrc.startsWith('http')) return;
+
+      // Créer le chemin WebP
+      const webpPath = getWebPPath(bgSrc);
+      if (webpPath) {
+        const testWebP = new Image();
+        testWebP.onload = () => {
+          el.style.backgroundImage = style.replace(bgSrc, webpPath);
+        };
+        testWebP.src = webpPath;
+      }
+    });
+  };
+
+  // Exécuter les optimisations dès que possible
+  const runOptimizations = () => {
+    optimizeHeroBackground();
+    // Délai pour laisser les images se charger d'abord
+    setTimeout(optimizeAllImages, 100);
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runOptimizations);
+  } else {
+    runOptimizations();
+  }
 })();
