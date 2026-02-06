@@ -1,6 +1,17 @@
 # Portfolio Evan
 
-Site portfolio 
+Site portfolio
+
+## Développement local
+
+- Lancer le serveur : `make serve`
+- Ouvrir le site : `make open`
+
+## Vérification des liens
+
+Installe `lychee` (ex. `cargo install lychee`) puis lance :
+
+- `make check-links`
 
 copyright@EvanBlondeau
 
