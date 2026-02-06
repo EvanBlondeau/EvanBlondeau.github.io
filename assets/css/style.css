@@ -4,6 +4,26 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
+  font-size: 1rem; /* 16px base */
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9375rem; /* 15px mobile */
+  }
+  
+  h1 { font-size: 2rem !important; }      /* 32px */
+  h2 { font-size: 1.5rem !important; }    /* 24px */
+  h3 { font-size: 1.25rem !important; }   /* 20px */
+  h4 { font-size: 1.125rem !important; }  /* 18px */
+  h5 { font-size: 1rem !important; }      /* 16px */
+  h6 { font-size: 0.875rem !important; }  /* 14px */
+  
+  .section-title h2 {
+    font-size: 1.75rem !important; /* 28px */
+    padding-bottom: 0.5rem;
+  }
 }
 
 a {
@@ -492,9 +512,10 @@ section {
   align-items: baseline;
   justify-content: space-between;
   gap: 10px;
-  font-weight: 600;
+  font-weight: 500;
   font-family: "Poppins", sans-serif;
   color: #050d18;
+  font-size: 0.75rem;
 }
 
 .skills .progress .skill .label {
