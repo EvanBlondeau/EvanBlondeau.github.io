@@ -175,6 +175,20 @@
   // Skills progress bars
   const skillsContent = document.querySelector('.skills-content');
   if (skillsContent) {
+    // Tooltips: keep ellipsis, show full text via native tooltip
+    const setTitle = (el) => {
+      const text = (el.textContent || '').trim().replace(/\s+/g, ' ');
+      if (!text) return;
+      el.setAttribute('title', text);
+      // Helpful for screen readers when text is truncated visually
+      if (!el.getAttribute('aria-label')) el.setAttribute('aria-label', text);
+    };
+
+    skillsContent.querySelectorAll('.title').forEach(setTitle);
+    // Tooltip sur toute la ligne (plus facile à survoler que seulement le label)
+    skillsContent.querySelectorAll('.progress .skill').forEach(setTitle);
+    skillsContent.querySelectorAll('.progress .skill .label').forEach(setTitle);
+
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;

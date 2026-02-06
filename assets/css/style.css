@@ -488,14 +488,26 @@ section {
   padding: 0;
   margin: 0 0 6px 0;
   text-transform: uppercase;
-  display: block;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   color: #050d18;
 }
 
+.skills .progress .skill .label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
 .skills .progress .skill .val {
-  float: right;
+  flex: 0 0 auto;
   font-style: normal;
 }
 
@@ -733,16 +745,7 @@ section {
 }
 
 .skills .icon {
-  float: left;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 54px;
-  height: 54px;
-  background: #149ddd;
-  border-radius: 50%;
-  transition: 0.5s;
-  border: 1px solid #149ddd;
+  display: none;
 }
 
 .skills .icon i {
@@ -759,22 +762,22 @@ section {
 }
 
 .skills .title {
-  margin-left: 80px;
+  margin-left: 0;
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.skills .title a {
+
+.skills .title {
   color: #343a40;
 }
 
-.skills .title a:hover {
-  color: #149ddd;
-}
-
 .skills .description {
-  margin-left: 80px;
+  margin-left: 0;
   line-height: 24px;
   font-size: 0.875rem;
 }
