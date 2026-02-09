@@ -14,8 +14,11 @@
       align-items: center;
       min-height: 100vh;
       margin: 0;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
+      --bg-404-start: #667eea;
+      --bg-404-end: #764ba2;
+      --text-404: #ffffff;
+      background: linear-gradient(135deg, var(--bg-404-start) 0%, var(--bg-404-end) 100%);
+      color: var(--text-404);
       text-align: center;
       padding: 20px;
     }
@@ -36,7 +39,7 @@
       margin: 1rem 0;
     }
     a {
-      color: white;
+      color: var(--text-404);
       text-decoration: underline;
       font-weight: bold;
     }

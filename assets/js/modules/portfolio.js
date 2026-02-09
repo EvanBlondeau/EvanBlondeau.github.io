@@ -48,6 +48,10 @@ export const initPortfolio = () => {
       // Évite la double initialisation
       if (carousel.dataset.carouselInit === 'true') return;
 
+      // Marque tôt pour activer les styles "carrousel" (et éviter le flash de toutes les images).
+      // Si on sort tôt (0/1 slide), on retire le flag pour garder le fallback CSS.
+      carousel.dataset.carouselInit = 'true';
+
       // Structure du carrousel (crée un conteneur 'track' si inexistant)
       let track = carousel.querySelector('.carousel-track');
       let slides = track ? Array.from(track.querySelectorAll('img')) : Array.from(carousel.querySelectorAll('img'));
@@ -64,6 +68,7 @@ export const initPortfolio = () => {
       // Si une seule image ou moins, pas besoin de carrousel
       if (slides.length <= 1) {
         slides.forEach(img => { img.style.display = 'block'; });
+        delete carousel.dataset.carouselInit;
         return;
       }
 
@@ -120,7 +125,6 @@ export const initPortfolio = () => {
       prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
       nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
 
-      carousel.dataset.carouselInit = 'true';
     });
   };
 

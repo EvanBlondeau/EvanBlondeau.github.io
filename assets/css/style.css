@@ -11,10 +11,61 @@
   --text-light: #fff;
   --text-muted: #a8a9b4;
   --border-color: #dce8f8;
+  --border-subtle: #eee;
+
+  /* Neutres & surfaces */
+  --surface-muted: #e4edf9;
+  --bg-accent-soft: #dff3fc;
+  --bg-soft: #f5f8fd;
+  --bg-section-alt: #f9f9f9;
+  --panel-surface: #212431;
+  --panel-border: #2c2f3f;
+  --icon-muted: #6f7180;
+  --dot-muted: #ddd;
+  --bg-dark-2: #333;
+  --surface-contrast: #fff;
+  --overlay-dark: #00000095;
+
+  /* Textes */
+  --heading-color: #050d18;
+  --text-secondary: #122f57;
+  --text-heading-alt: #343a40;
+  --text-invert-soft: #f4f6fd;
+  --text-invert-muted: #eaebf0;
+
+  /* Actions / états */
+  --primary-focus: #0d7bb8;
+  --primary-bright: #2eafec;
+  --primary-active: #147cdd;
+  --primary-shadow: #1483dd;
+  --danger: #ed3c0d;
+  --success: #18d26e;
+  --link-dark: #1f5297;
+  --breadcrumbs-sep: #0e2442;
+
+  /* Timeline (horizontale) */
+  --timeline-line: #9ca3af;
+  --timeline-year: #6b7280;
+  --timeline-month: #d1d5db;
+  --timeline-text: #4b5563;
+  --timeline-ring: rgba(59, 130, 246, 0.3);
+
+  /* Gradients (timeline / badges) */
+  --gradient-success-start: #10b981;
+  --gradient-success-end: #34d399;
+  --gradient-info-start: #3b82f6;
+  --gradient-info-end: #60a5fa;
+
+  /* Shadow/overlay helpers */
+  --shadow-text-soft: rgba(0, 0, 0, 0.35);
+
+  /* Polices (homogénéisation) */
+  --font-body: "Open Sans", sans-serif;
+  --font-heading: "Poppins", sans-serif;
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--font-body);
   color: var(--text-main);
   font-size: 1rem; /* 16px base */
   line-height: 1.6;
@@ -56,13 +107,18 @@ button:focus-visible {
   border-radius: 2px;
 }
 
+/* Tailwind compat: permet d'utiliser `border-theme` dans le HTML au lieu de `border-[#...]` */
+.border-theme {
+  border-color: var(--border-color) !important;
+}
+
 /* Contraste amélioré pour WCAG AA */
 a:focus {
-  color: #0d7bb8;
+  color: var(--primary-focus);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-heading);
 }
 
 /*--------------------------------------------------------------
@@ -91,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .back-to-top:hover {
   color: var(--text-light);
-  background: #2eafec;
+  background: var(--primary-bright);
   transition: background 0.2s ease-in-out;
 }
 
@@ -116,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 5rem auto 0.9375rem;
   display: block;
   width: 7.5rem;
-  border: 0.5rem solid #2c2f3f;
+  border: 0.5rem solid var(--panel-border);
   border-radius: 50%;
 }
 
@@ -128,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   -moz-text-align-last: center;
   text-align-last: center;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-heading);
 }
 
 #header .profile h1 a, #header .profile h1 a:hover {
@@ -139,7 +195,7 @@ h1, h2, h3, h4, h5, h6 {
 #header .profile .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #212431;
+  background: var(--panel-surface);
   color: var(--text-light);
   line-height: 1;
   padding: 8px 0;
@@ -213,7 +269,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a i {
   font-size: 24px;
   padding-right: 8px;
-  color: #6f7180;
+  color: var(--icon-muted);
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
@@ -296,7 +352,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-light);
   margin-bottom: 1rem;
   font-size: 26px;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-heading);
 }
 
 #hero p span {
@@ -339,7 +395,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 15px auto;
     display: block;
     width: 120px;
-    border: 8px solid #2c2f3f;
+    border: 8px solid var(--panel-border);
     border-radius: 50%;
   }
   
@@ -350,19 +406,19 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     -moz-text-align-last: center;
     text-align-last: center;
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-heading);
   }
   
   #hero .profile h1 a, #hero .profile h1 a:hover {
-    color: #fff;
+    color: var(--text-light);
     text-decoration: none;
   }
   
   #hero .profile .social-links a {
     font-size: 18px;
     display: inline-block;
-    background: #212431;
-    color: #fff;
+    background: var(--panel-surface);
+    color: var(--text-light);
     line-height: 1;
     padding: 8px 0;
     margin-right: 4px;
@@ -374,8 +430,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   #hero .profile .social-links a:hover {
-    background: #149ddd;
-    color: #fff;
+    background: var(--primary-color);
+    color: var(--text-light);
     text-decoration: none;
   }
 }
@@ -389,7 +445,7 @@ section {
 }
 
 .section-bg {
-  background: #f5f8fd;
+  background: var(--bg-soft);
 }
 
 .section-title {
@@ -402,7 +458,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #173b6c;
+  color: var(--secondary-color);
 }
 
 .section-title h2::after {
@@ -430,7 +486,7 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
-  color: #173b6c;
+  color: var(--secondary-color);
 }
 
 .about .content ul {
@@ -471,7 +527,7 @@ section {
 .facts .count-box i {
   display: block;
   font-size: 44px;
-  color: #149ddd;
+  color: var(--primary-color);
   float: left;
 }
 
@@ -480,30 +536,30 @@ section {
   line-height: 40px;
   display: block;
   font-weight: 700;
-  color: #050d18;
+  color: var(--heading-color);
   margin-left: 60px;
 }
 
 .facts .count-box p {
   padding: 15px 0 0 0;
   margin: 0 0 0 60px;
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.875rem;
-  color: #122f57;
+  color: var(--text-secondary);
 }
 
 .facts .count-box a {
   font-weight: 600;
   display: block;
   margin-top: 20px;
-  color: #122f57;
+  color: var(--text-secondary);
   font-size: 15px;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-heading);
   transition: ease-in-out 0.3s;
 }
 
 .facts .count-box a:hover {
-  color: #1f5297;
+  color: var(--link-dark);
 }
 
 /*--------------------------------------------------------------
@@ -525,8 +581,8 @@ section {
   justify-content: space-between;
   gap: 10px;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
+  font-family: var(--font-heading);
+  color: var(--heading-color);
   font-size: 0.75rem;
 }
 
@@ -564,7 +620,7 @@ section {
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #050d18;
+  color: var(--heading-color);
 }
 
 .resume .resume-item {
@@ -579,14 +635,14 @@ section {
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
+  font-family: var(--font-heading);
+  color: var(--heading-color);
   margin-bottom: 10px;
 }
 
 .resume .resume-item h5 {
   font-size: 16px;
-  background: #e4edf9;
+  background: var(--surface-muted);
   padding: 5px 15px;
   display: inline-block;
   font-weight: 600;
@@ -613,7 +669,7 @@ section {
   border-radius: 50px;
   left: -9px;
   top: 0;
-  background: #fff;
+  background: var(--bg-light);
   border: 2px solid var(--primary-color);
 }
 
@@ -665,7 +721,7 @@ section {
   margin: 0 auto 35px auto;
   list-style: none;
   text-align: center;
-  background: #fff;
+  background: var(--bg-light);
   border-radius: 50px;
   padding: 2px 15px;
 }
@@ -678,7 +734,7 @@ section {
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
-  color: #272829;
+  color: var(--text-main);
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
 }
@@ -697,54 +753,76 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border-radius: 1.5rem;
+  /* petite ombre derrière chaque card */
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.177);
 }
 
 .portfolio .portfolio-wrap:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  /* léger zoom + lift */
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio .portfolio-wrap::before {
   content: "";
-  background: rgba(255, 255, 255, 0.5);
+  /* Overlay sombre au survol (comme l'ancien rendu) */
+  background: var(--overlay-dark);
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.5s;
   z-index: 2;
   opacity: 0;
+  pointer-events: none;
 }
 
 .portfolio .portfolio-wrap .portfolio-links {
-  opacity: 1;
-  left: 0;
-  right: 0;
-  bottom: -60px;
+  opacity: 0;
+  position: absolute;
+  /* arrive depuis le bas */
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -18px);
   
   z-index: 3;
-  position: absolute;
-  transition: all ease-in-out 0.3s;
+  transition: opacity 0.3s ease, transform 0.3s ease, top 0.3s ease;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 0 16px;
+  text-align: center;
 }
 
 .portfolio .portfolio-wrap .portfolio-links a {
-  width: 13rem;
-  color: #fff;
-  font-size: 1.5rem;
+  /* bouton compact "Voir le projet" */
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-weight: 700;
   text-align: center;
-  background: rgba(35, 153, 208, 0.898);
-  transition: 0.3s;
+  background: rgba(35, 153, 208, 0.95);
+  transition: transform 0.2s ease, background 0.2s ease;
   border-radius: 0.5rem;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.5rem;
+  padding: 10px 18px;
+  line-height: 1;
+  min-height: unset;
 }
 
-.portfolio .portfolio-wrap .portfolio-links a svg {
-  width: 24px;
-  height: 24px;
+/* Titre dans l'overlay */
+.portfolio .portfolio-wrap .portfolio-links-title {
+  color: var(--text-light);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .portfolio .portfolio-wrap img {
@@ -756,28 +834,22 @@ section {
 }
 
 .portfolio .portfolio-wrap:hover img {
-  transform: scale(1.05);
+  transform: scale(1.10);
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  background: rgba(20, 157, 221, 0.95); /* Keep semi-transparent version or use var if opaque */
-}
-
-.portfolio .portfolio-wrap .portfolio-links a + a {
-  border-left: 1px solid var(--primary-hover);
+  background: rgba(20, 157, 221, 0.98);
+  transform: translateY(-1px);
 }
 
 .portfolio .portfolio-wrap:hover::before {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   opacity: 1;
 }
 
 .portfolio .portfolio-wrap:hover .portfolio-links {
   opacity: 1;
-  bottom: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*--------------------------------------------------------------
@@ -792,12 +864,12 @@ section {
 }
 
 .skills .icon i {
-  color: #fff;
+  color: var(--text-light);
   font-size: 24px;
 }
 
 .skills .icon-box:hover .icon {
-  background: #fff;
+  background: var(--bg-light);
 }
 
 .skills .icon-box:hover .icon i {
@@ -816,7 +888,7 @@ section {
 
 
 .skills .title {
-  color: #343a40;
+  color: var(--text-heading-alt);
 }
 
 .skills .description {
@@ -837,7 +909,7 @@ section {
 
 .contact .info {
   padding: 30px;
-  background: #fff;
+  background: var(--bg-light);
   width: 100%;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
@@ -848,7 +920,7 @@ section {
   float: left;
   width: 44px;
   height: 44px;
-  background: #dff3fc;
+  background: var(--bg-accent-soft);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -861,14 +933,14 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #050d18;
+  color: var(--heading-color);
 }
 
 .contact .info p {
   padding: 0 0 10px 60px;
   margin-bottom: 20px;
   font-size: 0.875rem;
-  color: #173b6c;
+  color: var(--secondary-color);
 }
 
 .contact .info .email p {
@@ -882,8 +954,8 @@ section {
 .contact .info .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #333;
-  color: #fff;
+  background: var(--bg-dark-2);
+  color: var(--text-light);
   line-height: 1;
   padding: 8px 0;
   border-radius: 50%;
@@ -907,7 +979,7 @@ section {
 .contact .js-email-form {
   width: 100%;
   padding: 30px;
-  background: #fff;
+  background: var(--bg-light);
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -925,8 +997,8 @@ section {
 
 .contact .js-email-form .error-message {
   display: none;
-  color: #fff;
-  background: #ed3c0d;
+  color: var(--text-light);
+  background: var(--danger);
   text-align: left;
   padding: 15px;
   font-weight: 600;
@@ -938,8 +1010,8 @@ section {
 
 .contact .js-email-form .sent-message {
   display: none;
-  color: #fff;
-  background: #18d26e;
+  color: var(--text-light);
+  background: var(--success);
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -947,7 +1019,7 @@ section {
 
 .contact .js-email-form .loading {
   display: none;
-  background: #fff;
+  background: var(--bg-light);
   text-align: center;
   padding: 15px;
 }
@@ -959,8 +1031,8 @@ section {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
+  border: 3px solid var(--success);
+  border-top-color: var(--border-subtle);
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
 }
@@ -1023,7 +1095,7 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 20px 0;
-  background: #f9f9f9;
+  background: var(--bg-section-alt);
 }
 
 .breadcrumbs h2 {
@@ -1047,7 +1119,7 @@ section {
 .breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
-  color: #0e2442;
+  color: var(--breadcrumbs-sep);
   content: "/";
 }
 
@@ -1092,23 +1164,29 @@ section {
 }
 
 .portfolio-details .portfolio-details-carousel img {
-  display: none;
+  /* Visible par défaut (fallback si JS non exécuté). Le JS masque ensuite les slides non actives. */
+  display: block;
   width: 100%;
   max-width: 100%;
   aspect-ratio: 19 / 9;
   object-fit: contain;
   object-position: center;
   border-radius: 1rem;
-  background-color: #fff;
+  background-color: var(--bg-light);
+}
+
+/* Quand le carrousel est initialisé, on masque tout via CSS puis le JS force l'image active en inline style. */
+.portfolio-details .portfolio-details-carousel[data-carousel-init="true"] img {
+  display: none;
 }
 
 .portfolio-details .portfolio-details-carousel .carousel-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(20, 157, 221, 0.9); /* Consider var if opacity needed */
+  background: rgba(20, 157, 221, 0.9); /* laisse volontairement l'opacité */
   border: none;
-  color: #fff;
+  color: var(--text-light);
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -1182,7 +1260,7 @@ section {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #ddd;
+  background-color: var(--dot-muted);
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -1210,7 +1288,7 @@ section {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #ddd !important;
+  background-color: var(--dot-muted) !important;
 
 }
 
@@ -1223,7 +1301,7 @@ section {
   position: absolute;
   right: 0;
   bottom: -70px;
-  background: #fff;
+  background: var(--bg-light);
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   z-index: 2;
 }
@@ -1233,7 +1311,7 @@ section {
   font-weight: 400;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .portfolio-details .portfolio-info .list-solution {
@@ -1297,7 +1375,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   padding: 15px;
-  color: #f4f6fd;
+  color: var(--text-invert-soft);
   font-size: 0.875rem;
   position: static;
   left: auto;
@@ -1316,7 +1394,7 @@ section {
   padding-top: 5px;
   text-align: center;
   font-size: 13px;
-  color: #eaebf0;
+  color: var(--text-invert-muted);
 }
 
 
@@ -1357,14 +1435,14 @@ section {
 	border-radius:1rem;
 	border:1px solid var(--primary-color);
 	color: var(--text-light);
-	font-family:Arial;
+	font-family: var(--font-heading);
   font-size:1.2rem;
   font-weight: 800;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #1483dd;
+	text-shadow:0px 1px 0px var(--primary-shadow);
 }
 .myButton:hover {
-	background-color:#147cdd;
+	background-color: var(--primary-active);
 }
 .myButton:active {
 	position:relative;
@@ -1393,21 +1471,21 @@ section {
   width: 24px;
   height: 24px;
   margin-right: 8px;
-  color: #6f7180;
+  color: var(--icon-muted);
   flex-shrink: 0;
 }
 
 .nav-menu a:hover svg, .nav-menu .active > a svg, .nav-menu li:hover > a svg {
-  color: #149ddd;
+  color: var(--primary-color);
 }
 
 /* Mobile toggle icon color */
 .mobile-nav-toggle svg {
-  color: #149ddd;
+  color: var(--primary-color);
 }
 
 .mobile-nav-active .mobile-nav-toggle svg {
-  color: #fff;
+  color: var(--text-light);
 }
 
 /* Header social icons (left sidebar) */
@@ -1443,10 +1521,10 @@ section {
 .skills .icon svg {
   width: 24px;
   height: 24px;
-  color: #fff;
+  color: var(--text-light);
 }
 
-.skills .icon-box:hover .icon svg { color: #149ddd; }
+.skills .icon-box:hover .icon svg { color: var(--primary-color); }
 
 /* Back-to-top arrow positioning */
 .back-to-top svg {
@@ -1462,20 +1540,20 @@ section {
   float: left;
   width: 44px;
   height: 44px;
-  background: #dff3fc;
+  background: var(--bg-accent-soft);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
-  color: #149ddd;
+  color: var(--primary-color);
 }
 
 .contact .info a svg { width: 20px; height: 20px; }
 
 .contact .info .email:hover a, .contact .info .address:hover a, .contact .info .phone:hover a {
-  background: #149ddd;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--text-light);
 }
 
 /*--------------------------------------------------------------
@@ -1532,7 +1610,7 @@ section {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  background: #fff;
+  background: var(--bg-light);
 }
 
 /* LightWidget responsive adjustments */
@@ -1677,7 +1755,7 @@ body.mobile-nav-active .loisirs [class*=" elfsight-app-"] {
   left: 0;
   right: 0;
   height: 4px;
-  background: #9ca3af;
+  background: var(--timeline-line);
 }
 
 /* Marqueurs verticaux pour les années */
@@ -1686,7 +1764,7 @@ body.mobile-nav-active .loisirs [class*=" elfsight-app-"] {
   top: 0;
   width: 2px;
   height: 12px;
-  background: #6b7280;
+  background: var(--timeline-year);
   transform: translateX(-50%);
 }
 
@@ -1696,7 +1774,7 @@ body.mobile-nav-active .loisirs [class*=" elfsight-app-"] {
   top: 0;
   width: 1px;
   height: 8px;
-  background: #d1d5db;
+  background: var(--timeline-month);
   transform: translateX(-50%);
 }
 
@@ -1713,7 +1791,7 @@ body.mobile-nav-active .loisirs [class*=" elfsight-app-"] {
   position: absolute;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #4b5563;
+  color: var(--timeline-text);
   transform: translateX(-50%);
 }
 
@@ -1734,11 +1812,11 @@ body.mobile-nav-active .loisirs [class*=" elfsight-app-"] {
 }
 
 .timeline-bar-formation {
-  background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+  background: linear-gradient(90deg, var(--gradient-success-start) 0%, var(--gradient-success-end) 100%);
 }
 
 .timeline-bar-experience {
-  background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
+  background: linear-gradient(90deg, var(--gradient-info-start) 0%, var(--gradient-info-end) 100%);
 }
 
 /* Logos ronds */
@@ -1747,8 +1825,8 @@ body.mobile-nav-active .loisirs [class*=" elfsight-app-"] {
   height: 60px;
   min-width: 60px;
   border-radius: 50%;
-  background: white;
-  border: 3px solid #fff;
+  background: var(--bg-light);
+  border: 3px solid var(--bg-light);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
@@ -1766,7 +1844,7 @@ body.mobile-nav-active .loisirs [class*=" elfsight-app-"] {
 
 .timeline-logo.active {
   transform: scale(1.1);
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 0 4px var(--timeline-ring);
 }
 
 .timeline-logo-img {
@@ -1779,7 +1857,7 @@ body.mobile-nav-active .loisirs [class*=" elfsight-app-"] {
 .timeline-logo-text {
   font-size: 0.875rem;
   font-weight: 700;
-  color: #1f5297;
+  color: var(--link-dark);
   text-align: center;
 }
 
