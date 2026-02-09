@@ -1,9 +1,21 @@
 /*--------------------------------------------------------------
 # Global
 --------------------------------------------------------------*/
+:root {
+  --primary-color: #149ddd;
+  --primary-hover: #37b3ed;
+  --secondary-color: #173b6c;
+  --bg-dark: #040b14;
+  --bg-light: #fff;
+  --text-main: #272829;
+  --text-light: #fff;
+  --text-muted: #a8a9b4;
+  --border-color: #dce8f8;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
-  color: #272829;
+  color: var(--text-main);
   font-size: 1rem; /* 16px base */
   line-height: 1.6;
 }
@@ -27,19 +39,19 @@ body {
 }
 
 a {
-  color: #149ddd;
+  color: var(--primary-color);
   text-decoration: none;
 }
 
 a:hover {
-  color: #37b3ed;
+  color: var(--primary-hover);
   text-decoration: none;
 }
 
 /* Amélioration de l'accessibilité : focus visible pour la navigation au clavier */
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid #149ddd;
+  outline: 3px solid var(--primary-color);
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -64,8 +76,8 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
   right: 1rem;
   bottom: 1rem;
-  background: #149ddd;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--text-light);
   transition: display 0.5s ease-in-out;
   z-index: 99999;
 }
@@ -78,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:hover {
-  color: #fff;
+  color: var(--text-light);
   background: #2eafec;
   transition: background 0.2s ease-in-out;
 }
@@ -96,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 10500;
   transition: all 0.5s;
   padding: 0 0.9375rem;
-  background: #040b14;
+  background: var(--bg-dark);
   overflow-y: auto;
 }
 
@@ -120,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .profile h1 a, #header .profile h1 a:hover {
-  color: #fff;
+  color: var(--text-light);
   text-decoration: none;
 }
 
@@ -128,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 18px;
   display: inline-block;
   background: #212431;
-  color: #fff;
+  color: var(--text-light);
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -140,8 +152,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .profile .social-links a:hover {
-  background: #149ddd;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--text-light);
   text-decoration: none;
 }
 
@@ -183,7 +195,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a {
   display: flex;
   align-items: center;
-  color: #a8a9b4;
+  color: var(--text-muted);
   padding: 12px 15px;
   margin-bottom: 8px;
   transition: 0.3s;
@@ -192,9 +204,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Amélioration du contraste pour WCAG AA - navigation */
 .nav-menu a:focus-visible {
-  color: #fff;
+  color: var(--text-light);
   background-color: rgba(20, 157, 221, 0.1);
-  outline: 2px solid #149ddd;
+  outline: 2px solid var(--primary-color);
   outline-offset: -2px;
 }
 
@@ -206,11 +218,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
   text-decoration: none;
-  color: #fff;
+  color: var(--text-light);
 }
 
 .nav-menu a:hover i, .nav-menu .active > a i, .nav-menu li:hover > a i {
-  color: #149ddd;
+  color: var(--primary-color);
 }
 
 /* Mobile Navigation */
@@ -230,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav-toggle i {
-  color: #149ddd;
+  color: var(--primary-color);
 }
 
 .mobile-nav-active {
@@ -242,7 +254,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav-active .mobile-nav-toggle i {
-  color: #fff;
+  color: var(--text-light);
 }
 
 /*--------------------------------------------------------------
@@ -273,7 +285,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 64px;
   font-weight: 700;
   line-height: 56px;
-  color: #fff;
+  color: var(--text-light);
 }
 
 #hero .profile {
@@ -281,17 +293,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero p {
-  color: #fff;
+  color: var(--text-light);
   margin-bottom: 1rem;
   font-size: 26px;
   font-family: "Poppins", sans-serif;
 }
 
 #hero p span {
-  color: #fff;
+  color: var(--text-light);
   padding-bottom: 4px;
   letter-spacing: 1px;
-  border-bottom: 3px solid #149ddd;
+  border-bottom: 3px solid var(--primary-color);
 }
 
 @media (min-width: 1024px) {
@@ -399,7 +411,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #149ddd;
+  background: var(--primary-color);
   bottom: 0;
   left: 0;
 }
@@ -435,7 +447,7 @@ section {
 .about .content ul i {
   font-size: 20px;
   padding-right: 2px;
-  color: #149ddd;
+  color: var(--primary-color);
 }
 /* Feather icons variant */
 .about .content ul svg { width: 20px; height: 20px; margin-right: 6px; vertical-align: middle; }
@@ -533,7 +545,7 @@ section {
 }
 
 .skills .progress-bar-wrap {
-  background: #dce8f8;
+  background: var(--border-color);
   height: 10px;
 }
 
@@ -541,7 +553,7 @@ section {
   width: 1px;
   height: 10px;
   transition: .9s;
-  background-color: #149ddd;
+  background-color: var(--primary-color);
 }
 
 /*--------------------------------------------------------------
@@ -558,7 +570,7 @@ section {
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #1f5297;
+  border-left: 2px solid var(--primary-color);
   position: relative;
 }
 
@@ -602,7 +614,7 @@ section {
   left: -9px;
   top: 0;
   background: #fff;
-  border: 2px solid #1f5297;
+  border: 2px solid var(--primary-color);
 }
 
 .grp-img-txt {
@@ -672,7 +684,7 @@ section {
 }
 
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-  color: #149ddd;
+  color: var(--primary-color);
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -685,6 +697,11 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
+}
+
+.portfolio .portfolio-wrap:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio .portfolio-wrap::before {
@@ -735,14 +752,19 @@ section {
   width: 100%;
   height: auto;
   border-radius: 1.5rem;
+  transition: all ease-in-out 0.3s;
+}
+
+.portfolio .portfolio-wrap:hover img {
+  transform: scale(1.05);
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  background: rgba(20, 157, 221, 0.95);
+  background: rgba(20, 157, 221, 0.95); /* Keep semi-transparent version or use var if opaque */
 }
 
 .portfolio .portfolio-wrap .portfolio-links a + a {
-  border-left: 1px solid #37b3ed;
+  border-left: 1px solid var(--primary-hover);
 }
 
 .portfolio .portfolio-wrap:hover::before {
@@ -779,7 +801,7 @@ section {
 }
 
 .skills .icon-box:hover .icon i {
-  color: #149ddd;
+  color: var(--primary-color);
 }
 
 .skills .title {
@@ -822,7 +844,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: #149ddd;
+  color: var(--primary-color);
   float: left;
   width: 44px;
   height: 44px;
@@ -873,13 +895,13 @@ section {
 }
 
 .contact .info .social-links a:hover {
-  background: #149ddd;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--text-light);
 }
 
 .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
-  background: #149ddd;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--text-light);
 }
 
 .contact .js-email-form {
@@ -966,16 +988,16 @@ section {
 }
 
 .contact .js-email-form button[type="submit"] {
-  background: #149ddd;
+  background: var(--primary-color);
   border: 0;
   padding: 10px 24px;
-  color: #fff;
+  color: var(--text-light);
   transition: 0.4s;
   border-radius: 4px;
 }
 
 .contact .js-email-form button[type="submit"]:hover {
-  background: #37b3ed;
+  background: var(--primary-hover);
 }
 
 @-webkit-keyframes animate-loading {
@@ -1084,7 +1106,7 @@ section {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(20, 157, 221, 0.9);
+  background: rgba(20, 157, 221, 0.9); /* Consider var if opacity needed */
   border: none;
   color: #fff;
   width: 44px;
@@ -1099,7 +1121,7 @@ section {
 }
 
 .portfolio-details .portfolio-details-carousel .carousel-nav:hover {
-  background: rgba(20, 157, 221, 1);
+  background: var(--primary-color);
 }
 
 .portfolio-details .portfolio-details-carousel .carousel-prev {
@@ -1167,13 +1189,13 @@ section {
 }
 
 .portfolio-details .portfolio-details-carousel .carousel-dot.active {
-  background-color: #149ddd;
+  background-color: var(--primary-color);
   transform: scale(1.1);
 }
 
 .portfolio-details .portfolio-details-carousel .carousel-dot:focus-visible,
 .portfolio-details .portfolio-details-carousel .carousel-nav:focus-visible {
-  outline: 2px solid #149ddd;
+  outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
 
@@ -1193,7 +1215,7 @@ section {
 }
 
 .portfolio-details .portfolio-details-carousel .owl-dot.active {
-  background-color: #149ddd !important;
+  background-color: var(--primary-color) !important;
 }
 
 .portfolio-details .portfolio-info {
@@ -1282,7 +1304,7 @@ section {
   bottom: auto;
   width: 100%;
   z-index: 9999;
-  background: #040b14;
+  background: var(--bg-dark);
   margin-top: 40px;
 }
 
@@ -1331,10 +1353,10 @@ section {
 }
 
 .myButton {
-	background-color:#149ddd;
+	background-color: var(--primary-color);
 	border-radius:1rem;
-	border:1px solid #149ddd;
-	color:#ffffff;
+	border:1px solid var(--primary-color);
+	color: var(--text-light);
 	font-family:Arial;
   font-size:1.2rem;
   font-weight: 800;
